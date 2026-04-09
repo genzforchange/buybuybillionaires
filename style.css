@@ -1,0 +1,132 @@
+/* *{
+  border: 1px red solid;
+} */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.product-card {
+  max-width: 12em;
+  background-color: #fff;
+  padding: 1em;
+  box-shadow: 0 5px 5px #e1e1e1;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: .2s;
+
+}
+.product-card img {
+  max-width: 100%;
+}
+.product-card h4 {
+  font-size: 1.3em;
+  margin: 0.5em 0;
+}
+.product-card div {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-button {
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1em;
+  transition: .2s;
+
+}
+
+.product-card.active .add-button{
+  background-color: red;
+  transform: rotate(45deg);
+  transition: .2s;
+}
+
+
+.product-card.active {
+  background-color: #c2ccd6;
+  color: #fff;
+  transition: .2s;
+
+}
+.add-button:hover {
+  color: #000;
+  background-color: green;
+}
+
+.product-card.active .add-button {
+  color: #000;
+  background-color: red;
+  transform: rotate(45deg);
+  transition: .2s;
+}
+
+.products-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  padding: 1em;
+}
+
+#billionaire-container{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:20px;
+}
+
+#billionaire-selector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  height: 300px;
+}
+
+.billionaire-card {
+  width: 60px;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  transform: translateY(calc(var(--index) * 20px));
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.35s ease;
+}
+
+.billionaire-card img {
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.35s ease;
+}
+
+.billionaire-card span {
+  display: block;
+  opacity: 0;
+  font-size: 12px;
+  transition: opacity 0.25s;
+}
+
+
+#billionaire-selector:hover .billionaire-card {
+  transform: translateY(calc(var(--index) * 70px));
+}
+
+#selected-info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:200px;
+}
+
+#selected-head img{
+  height: 100px;
+  border-radius:50%;
+  filter: drop-shadow(0 0 10px gold);
+}
