@@ -303,20 +303,23 @@ function formatMoney(amount){
   return "$" + amount.toLocaleString();
 }
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
+document.querySelectorAll(".collapsible").forEach(function(btn) {
+  btn.addEventListener("click", function() {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    var content;
+    if (this.classList.contains("cart")) {
+      content = document.querySelector("#cart-content");
+    } else {
+      content = this.nextElementSibling;
+    }
+    if (!content) return;
     if (content.style.display === "block") {
       content.style.display = "none";
     } else {
       content.style.display = "block";
     }
   });
-}
+});
 
 // TO DO: ADD CART FUNCTIONALITY THAT SHOWS THE ITEMS IN THE CART AND THEIR COSTS
 
