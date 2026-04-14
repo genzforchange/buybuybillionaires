@@ -206,6 +206,8 @@ function selectBillionaire(li) {
   billionaireName.innerHTML = b.name;
   billionaireMoney.innerHTML = formatMoney(b.money);
 
+  document.querySelector(".counter").classList.add("visible");
+
   let visibleHeads = Array.from(billionaireList.querySelectorAll(".billionaire-card"));
   visibleHeads.forEach((card, i) => {
     card.style.setProperty('--index', i);
