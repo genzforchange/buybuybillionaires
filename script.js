@@ -192,27 +192,32 @@ billionaires.forEach((b, i) => {
   b.element = li;
 });
 
-billionaireList.querySelectorAll(".billionaire-card").forEach(li => {
-  li.addEventListener("click", () => {
-    if(currentBillionaire){
-      billionaireList.appendChild(currentBillionaire.element);
-    }
+function selectBillionaire(li) {
+  if(currentBillionaire){
+    billionaireList.appendChild(currentBillionaire.element);
+  }
 
-    const b = billionaires.find(b => b.id === li.id);
-    currentBillionaire = b;
+  const b = billionaires.find(b => b.id === li.id);
+  currentBillionaire = b;
 
-    selectedHeadContainer.innerHTML = "";
-    selectedHeadContainer.appendChild(b.element);
+  selectedHeadContainer.innerHTML = "";
+  selectedHeadContainer.appendChild(b.element);
 
-    billionaireName.innerHTML = b.name;
-    billionaireMoney.innerHTML = formatMoney(b.money);
-    
-    let visibleHeads = Array.from(billionaireList.querySelectorAll(".billionaire-card"));
-    visibleHeads.forEach((card, i) => {
-      card.style.setProperty('--index', i); // only update --index
-    });
+  billionaireName.innerHTML = b.name;
+  billionaireMoney.innerHTML = formatMoney(b.money);
+
+  let visibleHeads = Array.from(billionaireList.querySelectorAll(".billionaire-card"));
+  visibleHeads.forEach((card, i) => {
+    card.style.setProperty('--index', i);
   });
+}
+
+billionaireList.querySelectorAll(".billionaire-card").forEach(li => {
+  li.addEventListener("click", () => selectBillionaire(li));
 });
+
+const defaultBillionaire = document.querySelector("#mark-zuckerberg");
+if(defaultBillionaire) selectBillionaire(defaultBillionaire);
 
 function formatShortMoney(amount) {
   if (amount >= 1_000_000_000) {
