@@ -63,6 +63,20 @@ html {
   padding-bottom: 25px;
 }
 
+.context{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 20%;
+}
+
+.shopping{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
 .product-card {
   max-width: 12em;
   background-color: #FBFBFB;
@@ -238,7 +252,7 @@ html {
   text-decoration: none;
 }
 
-#selected-head {
+#selected-head .billionaire-card {
   list-style: none;
 }
 
@@ -316,4 +330,26 @@ html {
 
 #cart{
   height: 30px;
+  text-align: right;
+}
+
+#cart-container{
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  width: 100%;
+}
+
+#cart-stats{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-left: 20px
+}
+
+#cart-stats span{
+  font-family: "archivo", sans-serif;
+  font-size: 21px;
+  letter-spacing: 1px;
 }
