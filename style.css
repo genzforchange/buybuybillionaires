@@ -1,39 +1,146 @@
 /* *{
   border: 1px red solid;
 } */
+
+:root {
+  /* colors */
+  --red: #F3403B;
+  --yellow: #FFC548;
+  --green: #00B588;
+  --blue: #6b81ef;
+  --black: #151515;
+  --white: #FBFBFB;
+}
+
+
+/*font-family: "louvette-pixel", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: "archivo", sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
 html {
   height: 100%;
   width: 100%;
+  background-color: #FFC548;
+}
+
+#awning {
+  width: 100%;
+  height: auto;
+  margin-top: -50px
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -225px;
+  margin-bottom: 125px;
+}
+
+.title h1{
+  font-family: "louvette-pixel", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: #F3403B;
+  letter-spacing: 1px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.title p{
+  font-family: "louvette-pixel", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #F3403B;
+  letter-spacing: 1px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .product-card {
   max-width: 12em;
-  background-color: #fff;
+  background-color: #FBFBFB;
   padding: 1em;
-  box-shadow: 0 5px 5px #e1e1e1;
+  border: 5px solid #6b81ef;
+  border-radius: 10px;
+  /* box-shadow: 0 1px 5px #151515; */
   font-family: Arial, Helvetica, sans-serif;
   transition: .2s;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
 }
+
 .product-card img {
   max-width: 100%;
 }
 
 .product-card p {
+  font-family: "archivo", sans-serif;
   max-width: 100%;
   font-size: 50px;
   text-align: center;
 }
 .product-card h4 {
-  font-size: 1.3em;
-  margin: 0.5em 0;
+  font-family: "archivo", sans-serif;
+  font-size: 21px;
+  line-height: 21px;
+  letter-spacing: 1px;
+  margin: 5px 0;
 }
 .product-card div {
-  font-size: 1.2em;
+  font-family: "archivo", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+/* .add-button {
+  background-color: #F3403B;
+  color: #FBFBFB;
+  font-family: "archivo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  border-radius: 5%;
+
+  width: 50px;
+  height: 25px;
+  transition: .2s;
+  margin-left: 40px;
+
+}
+
+.product-card.active .add-button{
+  background-color: #F3403B;
+  transition: .2s;
+}
+
+
+.product-card.active {
+  background-color: #E8E8E8;
+  color: #151515;
+  transition: .2s;
+
+}
+.add-button:hover {
+  color: #FBFBFB;
+  background-color: #00B588;
+}
+
+.product-card.active .add-button {
+  color: #FBFBFB;
+  background-color: #00B588;
+  transform: rotate(0deg);
+  transition: .2s;
+} */
+
 .add-button {
   background-color: green;
   color: #fff;
@@ -43,6 +150,7 @@ html {
   height: 25px;
   font-size: 1em;
   transition: .2s;
+  cursor: pointer;
 
 }
 
@@ -71,6 +179,7 @@ html {
   transition: .2s;
 }
 
+
 .products-container{
   display: flex;
   flex-wrap: wrap;
@@ -81,34 +190,30 @@ html {
 
 #billionaire-container{
   display:flex;
-  flex-direction:row;
-  align-items:flex-start;
-  gap:20px;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
 }
 
 #billionaire-selector {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0;
   list-style: none;
   height: 300px;
 }
 
 .billionaire-card {
-  width: 60px;
-  position: absolute; 
   left: 0;
   top: 0;
-  transform: translateY(calc(var(--index) * 20px));
-  cursor: pointer;
   text-align: center;
   transition: transform 0.35s ease;
 }
 
 .billionaire-card img {
-  height: 60px;
-  border-radius: 50%;
+  height: 30%;
+  /* border-radius: 50%; */
   transition: transform 0.35s ease;
 }
 
@@ -120,9 +225,9 @@ html {
 }
 
 
-#billionaire-selector:hover .billionaire-card {
-  transform: translateY(calc(var(--index) * 70px));
-}
+/*#billionaire-selector:hover .billionaire-card {
+  transform: scale(1.25);*/
+/* } */
 
 #selected-info{
   display:flex;
@@ -138,9 +243,62 @@ html {
 }
 
 .counter {
-  width: 100%;
+  width: 60%;
   position: sticky;
   bottom: 0;
-  background-color: #fff;
+  background-color: #6b81ef;
+  color: #FBFBFB;
   padding: 1em;
+  border-radius: 10px 0 0 0;
+}
+
+#billionaire-name{
+  font-family: louvette-pixel, sans-serif;
+  font-size: 46px;
+  letter-spacing: 1px;
+  font-weight: 400
+}
+
+#billionaire-money{
+  font-family: louvette-pixel, sans-serif;
+  font-size: 46px;
+  letter-spacing: 1px;
+  font-weight: 400
+}
+
+.counter p{
+  font-family: "archivo", sans-serif;
+  font-size: 26px;
+  letter-spacing: 1px
+}
+
+#warning{
+  font-family: "archivo", sans-serif;
+  font-size: 26px;
+  letter-spacing: 1px
+}
+
+.collapsible {
+  background-color: #FBFBFB;
+  color: #151515;
+  cursor: pointer;
+  padding: 21px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-family: "archivo", sans-serif;
+  font-size: 16px;
+}
+
+.active, .collapsible:hover {
+  background-color: #FBFBFB;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #FBFBFB;
+  font-family: "archivo", sans-serif;
 }

@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Buy Buy Billionaires</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Adobe Fonts -->
+<link rel="stylesheet" href="https://use.typekit.net/ldu5rur.css">
 
 </head>
 
@@ -14,27 +16,38 @@
 
 <div class="wrapper">
   <header>
-    <h1>Buy Buy Billionaires</h1>
-
-    <div id="billionaire-container">
-      <ul id="billionaire-selector"></ul>
-      <div id="selected-info">
-        <div>
-          <div id="selected-head"></div>
-        </div>
+  <img src="assets/awning.png" alt="awning" id="awning">
+    <div class="title">
+    <h1>Buy Buy Billionaire$</h1>
+    <!-- TO DO: REPLACE FILLER TEXT WITH COPY -->
+    <p>Every Wonder How Much We Could Buy if Billionaires Were Actually Taxed?</p>
       </div>
-    </div>
-    
+      <button type="button" class="collapsible">About this project</button>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>  
     </header>
+
+  <div id="billionaire-container">
+    <ul id="billionaire-selector"></ul>
+  </div>
 
     <div class="products-container">
     </div>
 
     <div class="counter">
-      <span id="billionaire-name"></span>
+      <div id="selected-info">
+        <div id="selected-head"></div>
+        <div>
+           <span id="billionaire-name"></span>
+        </div>
+      </div>      
+      
       <span id="billionaire-money"></span>
-      <p id="wallet">0</p>
-      <p id="total">0</p>
+      <button type="button" class="collapsible cart">View items in cart</button>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
     </div>
 
 

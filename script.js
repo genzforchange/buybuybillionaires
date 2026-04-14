@@ -1,3 +1,6 @@
+// TO DO: REPLACE PRODUCTS WITH UPDATED DATA FROM GOOGLE SHEET. Sofia formatted this by exporting from google sheets to CSV and then converting to JSON with an online converter.
+
+// TO DO: DETERMINE WHETHER WE'D LIKE TO CHANGE FROM EMOJIS TO IMAGES. IF SO, REPLACE THE EMOJI WITH THE IMAGE PATH.
 var products = [
     {
       name: "Free Community College",
@@ -160,28 +163,24 @@ var products = [
       notes: ""
     },
   ]
-// [
-//   {name: "End World Hunger", price: 40000000000, image: "https://codingyaar.com/wp-content/uploads/chair-image.jpg"},
-//   {name: "Product 2", price: 399, image: "https://codingyaar.com/wp-content/uploads/chair-image.jpg"},
-//   {name: "Product 3", price: 40000000000, image: "https://codingyaar.com/wp-content/uploads/chair-image.jpg"},
-//   {name: "Product 2", price: 399, image: "https://codingyaar.com/wp-content/uploads/chair-image.jpg"},
-//   {name: "End World Hunger", price: 40000000000, image: "https://codingyaar.com/wp-content/uploads/chair-image.jpg"},
-//   {name: "Product 2", price: 399, image: "https://codingyaar.com/wp-content/uploads/chair-image.jpg"}
-// ];
 
+// TO DO: IMPORT AND CORRECT IMAGES FOR BILL GATES, MARK ZUCKERBERG, LARRY PAGE, AND ALL 935 US BILLIONAIRES (if we don't want to use Mr. Krabs)
 var billionaires = [
   {id: "jeff-bezos", name: "Jeff Bezos", money: 7272000000, image: "assets/jeff-bezos.png", wealth: 242400000000},
   {id: "elon-musk", name: "Elon Musk", money: 21789000000, image: "assets/elon-musk.png", wealth: 726300000000},
-  {id: "bill-gates", name: "Bill Gates", money: 3102000000, image: "assets/jeff-bezos.png", wealth: 103400000000},
-  {id: "mark-zuckerberg", name: "Mark Zuckerberg", money: 6789000000, image: "assets/jeff-bezos.png", wealth: 226300000000},
+  {id: "bill-gates", name: "Bill Gates", money: 3102000000, image: "assets/bill-gates.png", wealth: 103400000000},
+  {id: "mark-zuckerberg", name: "Mark Zuckerberg", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000},
   {id: "larry-ellison", name: "Larry Ellison", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000},
-  {id: "larry-page", name: "Larry Page", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000}
+  {id: "larry-page", name: "Larry Page", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000},
+  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", money: 244814151570, image: "https://imgs.search.brave.com/sUz40-OJkrGxKkXXEs-ck-6FfriTBuWy-zDyexA74To/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5na2V5LmNvbS9w/bmcvZnVsbC80MzUt/NDM1MDIwOF9tci1r/cmFicy1wbmctc3Bv/bmdlYm9iLW1yLWty/YWJzLXBuZy5wbmc", wealth: 8160471719000}
 ];
 
 const billionaireList = document.querySelector("#billionaire-selector");
 const selectedHeadContainer = document.querySelector("#selected-head");
 const billionaireName = document.querySelector("#billionaire-name");
 const billionaireMoney = document.querySelector("#billionaire-money");
+const billionaireNetWorth = document.querySelector("#net-worth")
+const billionaireTotal = document.querySelector("#total")
 
 let currentBillionaire = null;
 
@@ -209,7 +208,9 @@ billionaireList.querySelectorAll(".billionaire-card").forEach(li => {
 
     billionaireName.innerHTML = b.name;
     billionaireMoney.innerHTML = formatMoney(b.money);
-
+    billionaireNetWorth.innerHTML = formatMoney(b.wealth);
+    billionaireTotal.innerHTML = formatMoney(b.money);
+    
     let visibleHeads = Array.from(billionaireList.querySelectorAll(".billionaire-card"));
     visibleHeads.forEach((card, i) => {
       card.style.setProperty('--index', i); // only update --index
@@ -217,7 +218,20 @@ billionaireList.querySelectorAll(".billionaire-card").forEach(li => {
   });
 });
 
+function formatShortMoney(amount) {
+  if (amount >= 1_000_000_000) {
+    return "$" + (amount / 1_000_000_000).toFixed(1) + "B";
+  } else if (amount >= 1_000_000) {
+    return "$" + (amount / 1_000_000).toFixed(1) + "M";
+  } else if (amount >= 1_000) {
+    return "$" + (amount / 1_000).toFixed(1) + "k";
+  } else {
+    return "$" + amount;
+  }
+}
+
 const productsContainer = document.querySelector(".products-container");
+// TO DO: IF WE WANT TO USE IMAGES INSTEAD OF EMOJIS, REPLACE THE EMOJI WITH THE IMAGE PATH BASED ON FORMAT BELOW THIS FUNCTION 
 products.forEach(product => {
   const card = document.createElement("div");
   card.classList.add("product-card");
@@ -225,10 +239,11 @@ products.forEach(product => {
     <p role="img" aria-label="${product.name}"  class=".img">${product.image}</p>
     <h4>${product.name}</h4>
     <div>
-      <span>$${parseFloat(product.price)}</span>
+     <span>${formatShortMoney(parseFloat(product.price.replaceAll(',', '')))}</span>
       <button class="add-button">+</button>
     </div>
   `;
+  //// THIS IS THE FORMAT FOR card.innerHTML FOR IMAGES INSTEAD OF EMOJIS /////
   // `
   //   <img src="${product.image}" alt="${product.name}">
   //   <h4>${product.name}</h4>
@@ -257,8 +272,27 @@ document.querySelectorAll(".product-card").forEach(card => {
 const wallet = document.querySelector("#wallet");
 const total = document.querySelector("#total");
 
-wallet.innerHTML = formatMoney(0);
+// wallet.innerHTML = formatMoney();
 
 function formatMoney(amount){
   return "$" + amount.toLocaleString();
 }
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+// TO DO: ADD CART FUNCTIONALITY THAT SHOWS THE ITEMS IN THE CART AND THEIR COSTS
+
+// TO DO: ADD RESET FUNCTIONALITY IN JS THAT RESETS THE CART ITEMS WHEN A NEW BILLIONAIRE IS CHOSEN (currently this results in an error that doesn't calculate the money properly when a new billionaire is chosen)
