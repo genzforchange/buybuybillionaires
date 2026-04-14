@@ -229,32 +229,25 @@ function formatShortMoney(amount) {
 const productsContainer = document.querySelector(".products-container");
 // TO DO: IF WE WANT TO USE IMAGES INSTEAD OF EMOJIS, REPLACE THE EMOJI WITH THE IMAGE PATH BASED ON FORMAT BELOW THIS FUNCTION 
 products.forEach(product => {
+  const rawPrice = parseFloat(product.price.replaceAll(',', ''));
   const card = document.createElement("div");
   card.classList.add("product-card");
+  card.dataset.price = rawPrice;
   card.innerHTML = `
     <p role="img" aria-label="${product.name}"  class=".img">${product.image}</p>
     <h4>${product.name}</h4>
     <div>
-     <span>${formatShortMoney(parseFloat(product.price.replaceAll(',', '')))}</span>
+     <span>${formatShortMoney(rawPrice)}</span>
       <button class="add-button">+</button>
     </div>
   `;
-  //// THIS IS THE FORMAT FOR card.innerHTML FOR IMAGES INSTEAD OF EMOJIS /////
-  // `
-  //   <img src="${product.image}" alt="${product.name}">
-  //   <h4>${product.name}</h4>
-  //   <div>
-  //     <span>$${parseFloat(product.price)}</span>
-  //     <button class="add-button">+</button>
-  //   </div>
-  // `
   productsContainer.appendChild(card);
 });
 
 document.querySelectorAll(".product-card").forEach(card => {
   card.addEventListener("click", () => {
     if(!currentBillionaire) return;
-    const price = parseFloat(card.querySelector("span").textContent.replace("$",""));
+    const price = parseFloat(card.dataset.price);
     card.classList.toggle("active");
     if(card.classList.contains("active")){
       currentBillionaire.money -= price;
