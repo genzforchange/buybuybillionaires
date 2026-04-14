@@ -292,14 +292,70 @@ html {
   font-size: 16px;
 }
 
-.active, .collapsible:hover {
-  background-color: #FBFBFB;
+.collapsible.cart{
+  background-color: #6b81ef;
+  color: #FBFBFB
 }
+
+/* .active, .collapsible:hover {
+  background-color: #FBFBFB;
+} */
 
 .content {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #FBFBFB;
+  /* background-color: #FBFBFB; */
   font-family: "archivo", sans-serif;
+}
+
+#cart{
+  height: 30px;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-family: "archivo", sans-serif;
+  font-size: 14px;
+  color: #FBFBFB;
+}
+
+.cart-item-name {
+  flex: 1;
+}
+
+.cart-item-price {
+  margin: 0 1em;
+  white-space: nowrap;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  color: #F3403B;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 0.3em;
+  line-height: 1;
+}
+
+.cart-remove:hover {
+  color: #ff6b6b;
+}
+
+.cart-empty {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  text-align: center;
+  padding: 0.5em 0;
 }

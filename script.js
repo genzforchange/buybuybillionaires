@@ -249,22 +249,52 @@ products.forEach(product => {
   productsContainer.appendChild(card);
 });
 
+const cartContent = document.querySelector("#cart-content");
+
+function updateCart() {
+  cartContent.innerHTML = "";
+  const activeCards = document.querySelectorAll(".product-card.active");
+  if(activeCards.length === 0) {
+    cartContent.innerHTML = "<p class='cart-empty'>Your cart is empty.</p>";
+    return;
+  }
+  const ul = document.createElement("ul");
+  ul.classList.add("cart-list");
+  activeCards.forEach(card => {
+    const name = card.querySelector("h4").textContent;
+    const displayPrice = card.querySelector("span").textContent;
+    const li = document.createElement("li");
+    li.classList.add("cart-item");
+    li.innerHTML = `<span class="cart-item-name">${name}</span><span class="cart-item-price">${displayPrice}</span><button class="cart-remove">&times;</button>`;
+    li.querySelector(".cart-remove").addEventListener("click", () => {
+      card.querySelector(".add-button").click();
+    });
+    ul.appendChild(li);
+  });
+  cartContent.appendChild(ul);
+}
+
+function toggleCard(card) {
+  if(!currentBillionaire) {
+    const defaultBillionaire = document.querySelector("#mark-zuckerberg");
+    if(defaultBillionaire) selectBillionaire(defaultBillionaire);
+  }
+  const price = parseFloat(card.dataset.price);
+  card.classList.toggle("active");
+  if(card.classList.contains("active")){
+    currentBillionaire.money -= price;
+  } else {
+    currentBillionaire.money += price;
+  }
+  billionaireMoney.innerHTML = formatMoney(currentBillionaire.money);
+  updateCart();
+}
+
 document.querySelectorAll(".product-card").forEach(card => {
   const btn = card.querySelector(".add-button");
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    if(!currentBillionaire) {
-      const defaultBillionaire = document.querySelector("#mark-zuckerberg");
-      if(defaultBillionaire) selectBillionaire(defaultBillionaire);
-    }
-    const price = parseFloat(card.dataset.price);
-    card.classList.toggle("active");
-    if(card.classList.contains("active")){
-      currentBillionaire.money -= price;
-    } else {
-      currentBillionaire.money += price;
-    }
-    billionaireMoney.innerHTML = formatMoney(currentBillionaire.money);
+    toggleCard(card);
   });
 });
 
