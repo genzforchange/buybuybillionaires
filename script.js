@@ -245,7 +245,9 @@ products.forEach(product => {
 });
 
 document.querySelectorAll(".product-card").forEach(card => {
-  card.addEventListener("click", () => {
+  const btn = card.querySelector(".add-button");
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
     if(!currentBillionaire) return;
     const price = parseFloat(card.dataset.price);
     card.classList.toggle("active");

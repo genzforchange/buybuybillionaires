@@ -38,13 +38,15 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -225px;
+  margin-bottom: 125px;
 }
 
 .title h1{
   font-family: "louvette-pixel", sans-serif;
-  font-size: 64px;
+  font-size: 76px;
   font-weight: 400;
-  color: #F3403B;
+  color: #151515;
   letter-spacing: 1px;
   margin: 0px;
   padding: 0px;
@@ -54,7 +56,7 @@ html {
   font-family: "louvette-pixel", sans-serif;
   font-size: 26px;
   font-weight: 400;
-  color: #F3403B;
+  color: #151515;
   letter-spacing: 1px;
   margin: 0px;
   padding: 0px;
