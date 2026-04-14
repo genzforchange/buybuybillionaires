@@ -63,6 +63,12 @@ html {
   padding-bottom: 25px;
 }
 
+.main{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .context{
   display: flex;
   flex-direction: column;
@@ -252,10 +258,6 @@ html {
   text-decoration: none;
 }
 
-#selected-head .billionaire-card {
-  list-style: none;
-}
-
 #selected-head img{
   height: 100px;
   border-radius:50%;
@@ -336,7 +338,8 @@ html {
 #cart-container{
   display: flex;
   flex-direction: row;
-  align-items: space-between;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
