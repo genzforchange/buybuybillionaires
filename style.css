@@ -409,5 +409,22 @@ li{
   letter-spacing: 1px;
 }
 
+@media screen and (max-width: 1240px) {
 
-media 
+}
+
+@media screen and (max-width: 450px) {
+
+.title{
+  flex-direction: column;
+  margin: 10px;
+  gap: 0px;
+}
+
+.title h1{
+  font-size: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+  
+}
