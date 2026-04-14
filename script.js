@@ -179,8 +179,6 @@ const billionaireList = document.querySelector("#billionaire-selector");
 const selectedHeadContainer = document.querySelector("#selected-head");
 const billionaireName = document.querySelector("#billionaire-name");
 const billionaireMoney = document.querySelector("#billionaire-money");
-const billionaireNetWorth = document.querySelector("#net-worth")
-const billionaireTotal = document.querySelector("#total")
 
 let currentBillionaire = null;
 
@@ -208,8 +206,6 @@ billionaireList.querySelectorAll(".billionaire-card").forEach(li => {
 
     billionaireName.innerHTML = b.name;
     billionaireMoney.innerHTML = formatMoney(b.money);
-    billionaireNetWorth.innerHTML = formatMoney(b.wealth);
-    billionaireTotal.innerHTML = formatMoney(b.money);
     
     let visibleHeads = Array.from(billionaireList.querySelectorAll(".billionaire-card"));
     visibleHeads.forEach((card, i) => {
@@ -269,10 +265,6 @@ document.querySelectorAll(".product-card").forEach(card => {
   });
 });
 
-const wallet = document.querySelector("#wallet");
-const total = document.querySelector("#total");
-
-// wallet.innerHTML = formatMoney();
 
 function formatMoney(amount){
   return "$" + amount.toLocaleString();
