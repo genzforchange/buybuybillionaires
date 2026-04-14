@@ -321,11 +321,16 @@ li{
   color: #FBFBFB;
   padding: 1em;
   border-radius: 10px 10px 0 0;
-  display: none;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .counter.visible {
-  display: block;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #billionaire-name{
