@@ -172,7 +172,7 @@ var billionaires = [
   {id: "mark-zuckerberg", name: "Mark Zuckerberg", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000},
   {id: "larry-ellison", name: "Larry Ellison", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000},
   {id: "larry-page", name: "Larry Page", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000},
-  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", money: 244814151570, image: "https://imgs.search.brave.com/sUz40-OJkrGxKkXXEs-ck-6FfriTBuWy-zDyexA74To/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5na2V5LmNvbS9w/bmcvZnVsbC80MzUt/NDM1MDIwOF9tci1r/cmFicy1wbmctc3Bv/bmdlYm9iLW1yLWty/YWJzLXBuZy5wbmc", wealth: 8160471719000}
+  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", money: 244814151570, image: "assets/mr-krabs.png", wealth: 8160471719000}
 ];
 
 const billionaireList = document.querySelector("#billionaire-selector");

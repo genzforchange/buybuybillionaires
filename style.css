@@ -26,45 +26,63 @@ font-weight: 400;
 font-style: normal;
 */
 
-html {
-  height: 100%;
-  width: 100%;
-  background-color: #FFC548;
-}
-
-#awning {
-  width: 100%;
-  height: auto;
-  margin-top: -50px
+html, body {
+  /* height: 100%; */
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
+  background-color: var(--yellow);
+  background-image: url("assets/background.png");
 }
 
 .title{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  margin-top: -250px;
+  margin: 25px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .title h1{
   font-family: "dark-london", sans-serif;
-  font-size: 144px;
+  font-size: 75px;
   font-weight: 400;
-  color: #151515;
+  color: var(--black);
+  text-align: center;
   letter-spacing: 1px;
   margin: 0px;
   padding: 0px;
 }
 
-.title p{
+.context{
+  font-family: "archivo", sans-serif;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  width: 10%;
+  padding: 10px 15px;
+  text-align: center;
+  border: 2px solid var(--black);
+  font-size: 12px;
+}
+
+#please-change-font{
   font-family: "dark-london", sans-serif;
+  text-align: center;
   font-size: 40px;
   font-weight: 400;
-  color: #151515;
+  color: var(--black);
   letter-spacing: 1px;
-  margin: 0px;
+  margin: 25px 0px;
   padding: 0px;
-  padding-top: 75px;
-  padding-bottom: 25px;
+}
+
+hr{
+  color: var(--black);
+  border: 1px solid var(--black);
+  width: 80%;
+  margin: auto;
 }
 
 .main{
@@ -73,26 +91,28 @@ html {
   align-items: flex-start;
 }
 
-.context{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  width: 30%;
-}
-
 .shopping{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 80%;
+  margin: auto;
+}
+
+#instructions{
+  font-family: "archivo", sans-serif;
+  font-size: 21px;
+  letter-spacing: 1px;
+  margin: 0px;
+  padding: 0px
 }
 
 .product-card {
   max-width: 12em;
   background-color: #FBFBFB;
   padding: 1em;
-  border: 5px solid #6b81ef;
-  border-radius: 10px;
+  border: 2px solid var(--black);
+  border-radius: 1px;
   /* box-shadow: 0 1px 5px #151515; */
   font-family: Arial, Helvetica, sans-serif;
   transition: .2s;
@@ -216,8 +236,9 @@ html {
 #billionaire-container{
   display:flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   margin: 0;
+  justify-content: center;
 }
 
 #billionaire-selector {
@@ -226,7 +247,7 @@ html {
   flex-direction: row;
   padding: 0;
   list-style: none;
-  height: 300px;
+  height: 100px;
 }
 
 .billionaire-card {
@@ -234,19 +255,39 @@ html {
   top: 0;
   text-align: center;
   transition: transform 0.35s ease;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.billionaire-card::marker{
+  text-decoration: none;
+  color: var(--black);
+  display: none;
+  list-style-type: none;
+  opacity: 0;
+}
+
+li{
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .billionaire-card img {
-  height: 30%;
+  height: 100%;
   /* border-radius: 50%; */
   transition: transform 0.35s ease;
 }
 
 .billionaire-card span {
   display: block;
-  opacity: 0;
+  font-family: "archivo", sans-serif;
   font-size: 12px;
-  transition: opacity 0.25s;
+}
+
+.billionaire-card:hover span{
+  opacity: 1;
+  font-family: "archivo", sans-serif;
+  font-size: 16px;
 }
 
 
@@ -262,23 +303,23 @@ html {
   text-decoration: none;
 }
 
-#selected-head li {
-  list-style: none;
+#selected-head{
+  list-style-type: none;
 }
 
 #selected-head img{
   height: 100px;
   border-radius:50%;
-  filter: drop-shadow(0 0 10px gold);
+  /* filter: drop-shadow(0 0 10px gold); */
 }
 
 .counter {
   width: 60%;
   position: sticky;
   bottom: 0;
-  background-color: #6b81ef;
+  background-color: #151515;
   color: #FBFBFB;
-  padding: 1em;
+  padding: 1em .5em;
   border-radius: 10px 10px 0 0;
 }
 
@@ -322,8 +363,11 @@ html {
 }
 
 .collapsible.cart{
-  background-color: #6b81ef;
-  color: #FBFBFB
+  background-color: #151515;
+  color: #FBFBFB;
+  width: auto;
+  padding: 10px;
+  margin-left: auto;
 }
 
 /* .active, .collapsible:hover {
@@ -346,7 +390,8 @@ html {
 #cart-container{
   display: flex;
   flex-direction: row;
-  align-items: space-between;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -363,3 +408,6 @@ html {
   font-size: 21px;
   letter-spacing: 1px;
 }
+
+
+media 
