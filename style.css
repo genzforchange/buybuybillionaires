@@ -307,8 +307,8 @@ li{
   list-style-type: none;
 }
 
-#selected-head .billionaire-card span {
-  display: none;
+#selected-head span{
+  display: none !important;
 }
 
 #selected-head img{
@@ -433,12 +433,16 @@ li{
 
 .context{
   width: 100%;
-  padding: 5px 10px;
+  padding: 2.5px 5px;
   text-align: center;
   border: 2px solid var(--black);
   font-size: 13px;
 }
 
-
+#please-change-font{
+   font-size: 21px;
+   margin: 10px 0px;
+   padding: 0px
+}
   
 }
