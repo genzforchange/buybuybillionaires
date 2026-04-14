@@ -70,7 +70,7 @@ html, body {
 #please-change-font{
   font-family: "dark-london", sans-serif;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   color: var(--black);
   letter-spacing: 1px;
@@ -307,10 +307,6 @@ li{
   list-style-type: none;
 }
 
-#selected-head span{
-  display: none !important;
-}
-
 #selected-head img{
   height: 100px;
   border-radius:50%;
@@ -325,6 +321,11 @@ li{
   color: #FBFBFB;
   padding: 1em;
   border-radius: 10px 10px 0 0;
+  display: none;
+}
+
+.counter.visible {
+  display: block;
 }
 
 #billionaire-name{
