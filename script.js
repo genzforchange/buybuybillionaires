@@ -218,8 +218,6 @@ billionaireList.querySelectorAll(".billionaire-card").forEach(li => {
   li.addEventListener("click", () => selectBillionaire(li));
 });
 
-const defaultBillionaire = document.querySelector("#mark-zuckerberg");
-if(defaultBillionaire) selectBillionaire(defaultBillionaire);
 
 function formatShortMoney(amount) {
   if (amount >= 1_000_000_000) {
@@ -255,7 +253,10 @@ document.querySelectorAll(".product-card").forEach(card => {
   const btn = card.querySelector(".add-button");
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    if(!currentBillionaire) return;
+    if(!currentBillionaire) {
+      const defaultBillionaire = document.querySelector("#mark-zuckerberg");
+      if(defaultBillionaire) selectBillionaire(defaultBillionaire);
+    }
     const price = parseFloat(card.dataset.price);
     card.classList.toggle("active");
     if(card.classList.contains("active")){
