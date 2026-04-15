@@ -632,9 +632,11 @@ hr{
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   padding: 0;
   list-style: none;
-  height: 100px;
 }
 
 .billionaire-card {
@@ -872,10 +874,11 @@ footer a{
 
   #billionaire-selector {
     display: flex;
-    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
     padding: 0;
     list-style: none;
-    height: 100px;
   }
   
 }
