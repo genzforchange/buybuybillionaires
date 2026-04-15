@@ -572,6 +572,15 @@ hr{
   padding-top: 1em;
 }
 
+.receipt-url {
+  text-align: center;
+  font-family: "receipt-narrow", sans-serif;
+  font-size: 11px;
+  color: #777;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
 .cart-list {
   list-style: none;
   padding: 0;
