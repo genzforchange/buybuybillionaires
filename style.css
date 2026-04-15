@@ -378,7 +378,8 @@ hr{
   font-family: "archivo", sans-serif;
   font-size: 12px;
   margin: 0.15em 0;
-  word-break: break-all;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .sources-link-text a {
