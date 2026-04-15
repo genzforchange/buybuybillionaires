@@ -328,15 +328,38 @@ hr{
 }
 
 .receipt-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   border-bottom: 2px dashed #999;
   padding-bottom: 0.75em;
   margin-bottom: 0.75em;
 }
 
-.receipt-info p {
+.receipt-info-text {
+  flex: 1;
+}
+
+.receipt-info-text p {
   font-family: "receipt-narrow", sans-serif;
   font-size: 13px;
   margin: 0.2em 0;
+}
+
+.receipt-stamps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  margin-left: 0.5em;
+  overflow: hidden;
+}
+
+.receipt-stamps img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  opacity: 0.8;
 }
 
 .receipt-item {
