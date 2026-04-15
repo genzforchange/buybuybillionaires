@@ -6,7 +6,7 @@ var products = [
       name: "Free Community College",
       cost_of_one: "3,890",
       population: "8,871,746",
-      price: "34,511,091,940.00",
+      price: "91,940.00",
       image: "🏫",
       source_1: "https://educationdata.org/average-cost-of-community-college",
       source_2: "https://www.ed.gov/higher-education/find-college-or-educational-program/community-college/community-college-facts-glance",
@@ -16,7 +16,7 @@ var products = [
       name: "Free Birth under 100k",
       cost_of_one: "20,416",
       population: "2,324,740",
-      price: "47,461,891,840.00",
+      price: "891,840.00",
       image: "🫄",
       source_1: "https://www.investopedia.com/how-much-does-it-cost-to-have-a-baby-in-america-6745508",
       source_2: "https://www.cdc.gov/nchs/fastats/births.htm",
@@ -26,7 +26,7 @@ var products = [
       name: "10k Paid Family Leave under 100k",
       cost_of_one: "10000",
       population: "2,324,740",
-      price: "23,247,400,000.00",
+      price: "400,000.00",
       image: "🍼",
       source_1: "https://www.census.gov/data/tables/2022/demo/fertility/women-fertility.html",
       source_2: "",
@@ -284,7 +284,8 @@ function updateCart() {
 }
 
 function showSpentMessage() {
-  billionaireMoney.dataset.originalText = billionaireMoney.innerHTML;
+  billionaireMoney.classList.remove("spent-shake");
+  void billionaireMoney.offsetWidth;
   billionaireMoney.innerHTML = "Congrats, you spent it all!";
   billionaireMoney.classList.add("spent-shake");
   setTimeout(() => {
