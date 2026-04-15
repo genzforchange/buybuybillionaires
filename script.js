@@ -410,4 +410,22 @@ receiptOverlay.addEventListener("click", (e) => {
   }
 });
 
+document.querySelector("#share-receipt-btn").addEventListener("click", () => {
+  const receiptEl = document.querySelector("#receipt");
+  html2canvas(receiptEl, { backgroundColor: null, useCORS: true, scale: 2 }).then(canvas => {
+    canvas.toBlob(blob => {
+      if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], "receipt.png", { type: "image/png" })] })) {
+        const file = new File([blob], "receipt.png", { type: "image/png" });
+        navigator.share({ files: [file], title: "Buy Buy Billionaire$ Receipt" });
+      } else {
+        const link = document.createElement("a");
+        link.download = "buy-buy-billionaires-receipt.png";
+        link.href = URL.createObjectURL(blob);
+        link.click();
+        URL.revokeObjectURL(link.href);
+      }
+    }, "image/png");
+  });
+});
+
 // TO DO: ADD RESET FUNCTIONALITY IN JS THAT RESETS THE CART ITEMS WHEN A NEW BILLIONAIRE IS CHOSEN (currently this results in an error that doesn't calculate the money properly when a new billionaire is chosen)

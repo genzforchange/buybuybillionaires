@@ -408,6 +408,25 @@ hr{
   height: auto;
 }
 
+.share-receipt-btn {
+  display: block;
+  margin: 0.75em auto 0;
+  padding: 0.6em 1.5em;
+  background-color: #F3403B;
+  color: #FBFBFB;
+  border: none;
+  border-radius: 6px;
+  font-family: "archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.share-receipt-btn:hover {
+  background-color: #d63631;
+}
+
 .receipt-thanks {
   text-align: center;
   font-family: "receipt-narrow", sans-serif;
