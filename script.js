@@ -381,6 +381,8 @@ checkoutBtn.addEventListener("click", () => {
   receiptOriginalBalance.textContent = "$" + currentBillionaire.wealth.toLocaleString();
 
   receiptItems.innerHTML = "";
+  const oldItemCount = document.querySelector(".receipt-item-count");
+  if (oldItemCount) oldItemCount.remove();
   let total = 0;
   activeCards.forEach(card => {
     const name = card.querySelector("h4").textContent;
@@ -391,6 +393,11 @@ checkoutBtn.addEventListener("click", () => {
     div.innerHTML = `<span>${name}</span><span>$${price.toLocaleString()}</span>`;
     receiptItems.appendChild(div);
   });
+
+  const itemCount = document.createElement("div");
+  itemCount.classList.add("receipt-item-count");
+  itemCount.innerHTML = `<span>Item Count</span><span>${activeCards.length}</span>`;
+  receiptTotal.parentNode.insertBefore(itemCount, receiptTotal);
 
   receiptTotal.innerHTML = `<span>Total</span><span>$${total.toLocaleString()}</span>`;
   receiptRemaining.innerHTML = `<span>Remaining</span><span>$${currentBillionaire.money.toLocaleString()}</span>`;
