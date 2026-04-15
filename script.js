@@ -445,32 +445,33 @@ document.querySelector("#share-receipt-btn").addEventListener("click", (e) => {
   });
 });
 
-const sourcesOverlay = document.querySelector("#sources-overlay");
-const sourcesList = document.querySelector("#sources-list");
-
-document.querySelector("#view-sources").addEventListener("click", () => {
+function openSources() {
+  var sourcesOverlay = document.querySelector("#sources-overlay");
+  var sourcesList = document.querySelector("#sources-list");
   sourcesList.innerHTML = "";
-  const seen = new Set();
-  products.forEach(p => {
-    if (seen.has(p.name)) return;
-    seen.add(p.name);
-    const item = document.createElement("div");
+  var seen = {};
+  products.forEach(function(p) {
+    if (seen[p.name]) return;
+    seen[p.name] = true;
+    var item = document.createElement("div");
     item.classList.add("sources-item");
-    let html = `<p class="sources-product-name">${p.name}</p>`;
-    if (p.source_1) html += `<p class="sources-link-text">Source: <a href="${p.source_1}" target="_blank">${p.source_1}</a></p>`;
-    if (p.source_2) html += `<p class="sources-link-text">Source: <a href="${p.source_2}" target="_blank">${p.source_2}</a></p>`;
+    var html = '<p class="sources-product-name">' + p.name + '</p>';
+    if (p.source_1) html += '<p class="sources-link-text">Source: <a href="' + p.source_1 + '" target="_blank">' + p.source_1 + '</a></p>';
+    if (p.source_2) html += '<p class="sources-link-text">Source: <a href="' + p.source_2 + '" target="_blank">' + p.source_2 + '</a></p>';
     item.innerHTML = html;
     sourcesList.appendChild(item);
   });
   sourcesOverlay.classList.add("visible");
+}
+
+document.querySelector("#sources-overlay").addEventListener("click", function(e) {
+  if (e.target === document.querySelector("#sources-overlay")) {
+    document.querySelector("#sources-overlay").classList.remove("visible");
+  }
 });
 
-sourcesOverlay.addEventListener("click", (e) => {
-  if (e.target === sourcesOverlay) sourcesOverlay.classList.remove("visible");
-});
-
-document.querySelector(".sources-close").addEventListener("click", () => {
-  sourcesOverlay.classList.remove("visible");
+document.querySelector(".sources-close").addEventListener("click", function() {
+  document.querySelector("#sources-overlay").classList.remove("visible");
 });
 
 // TO DO: ADD RESET FUNCTIONALITY IN JS THAT RESETS THE CART ITEMS WHEN A NEW BILLIONAIRE IS CHOSEN (currently this results in an error that doesn't calculate the money properly when a new billionaire is chosen)
