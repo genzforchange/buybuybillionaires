@@ -863,7 +863,7 @@ footer a{
 }
 
 .title h1{
-  font-size: 40px;
+  font-size: 45px;
   margin: 0px;
   padding: 0px;
 }
@@ -888,14 +888,26 @@ footer a{
   }
 
   .mobile-take-action {
-    display: block !important;
-    font-family: "archivo", sans-serif;
+    display: flex !important;
+    font-family: "RL Horizon", sans-serif;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    text-decoration: underline;
-    margin: 0.5em 0;
+    text-decoration: none;
+    margin: 0.5em auto;
+    padding: 2.5px 5px;
+    border: 2px solid var(--black);
+    color: var(--black);
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .mobile-take-action:hover {
+    background-color: var(--black);
+    color: #FBFBFB;
+    font-weight: 700;
   }
 
   .footer-sources-link {
