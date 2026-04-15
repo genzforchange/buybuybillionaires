@@ -389,6 +389,48 @@ hr{
   margin: 0.2em 0;
 }
 
+.receipt-tagline {
+  text-align: center;
+  font-family: "receipt-narrow", sans-serif;
+  font-size: 11px;
+  color: #333;
+  margin: 1em 0 0.5em;
+  font-style: italic;
+}
+
+.receipt-barcode {
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 0;
+}
+
+.barcode-bars {
+  width: 60%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000 0px, #000 1px,
+    transparent 1px, transparent 3px,
+    #000 3px, #000 5px,
+    transparent 5px, transparent 7px,
+    #000 7px, #000 8px,
+    transparent 8px, transparent 11px,
+    #000 11px, #000 13px,
+    transparent 13px, transparent 14px,
+    #000 14px, #000 15px,
+    transparent 15px, transparent 18px,
+    #000 18px, #000 20px,
+    transparent 20px, transparent 21px,
+    #000 21px, #000 23px,
+    transparent 23px, transparent 26px,
+    #000 26px, #000 27px,
+    transparent 27px, transparent 28px,
+    #000 28px, #000 30px,
+    transparent 30px, transparent 32px
+  );
+  background-size: 32px 40px;
+}
+
 .receipt-thanks {
   text-align: center;
   font-family: "receipt-narrow", sans-serif;
