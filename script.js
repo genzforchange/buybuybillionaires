@@ -157,7 +157,7 @@ function selectBillionaire(li) {
   }
   document.querySelectorAll(".product-card.active").forEach(card => {
     card.classList.remove("active");
-    card.querySelector(".add-button").textContent = "Add";
+    card.querySelector(".add-button").textContent = "+";
   });
   updateCart();
 
