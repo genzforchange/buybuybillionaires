@@ -840,6 +840,12 @@ footer a{
   text-decoration: none;
 }
 
+.footer-sources-link {
+  display: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1240px) {
 
 }
@@ -871,6 +877,14 @@ footer a{
    margin: 10px 0px;
    padding: 0px
 }
+
+  #view-sources {
+    display: none !important;
+  }
+
+  .footer-sources-link {
+    display: block !important;
+  }
 
   #billionaire-container {
     flex-direction: column;
