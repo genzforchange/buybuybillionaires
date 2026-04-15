@@ -201,7 +201,7 @@ hr{
 
 .spent-shake {
   color: #F3403B !important;
-  animation: shake 0.5s ease 3;
+  animation: shake 0.5s ease 1;
 }
 
 @keyframes shake {
