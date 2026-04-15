@@ -1,176 +1,124 @@
 // TO DO: REPLACE PRODUCTS WITH UPDATED DATA FROM GOOGLE SHEET. Sofia formatted this by exporting from google sheets to CSV and then converting to JSON with an online converter.
 var products = [
-    {
-      name: "Free Community College",
-      cost_of_one: "3,890",
-      population: "8,871,746",
-      price: "91,940.00",
-      image: "🏫",
-      source_1: "https://educationdata.org/average-cost-of-community-college",
-      source_2: "https://www.ed.gov/higher-education/find-college-or-educational-program/community-college/community-college-facts-glance",
-      notes: "this is some text showing a note of some kind."
-    },
-    {
-      name: "Free Birth under 100k",
-      cost_of_one: "20,416",
-      population: "2,324,740",
-      price: "891,840.00",
-      image: "🫄",
-      source_1: "https://www.investopedia.com/how-much-does-it-cost-to-have-a-baby-in-america-6745508",
-      source_2: "https://www.cdc.gov/nchs/fastats/births.htm",
-      notes: ""
-    },
-    {
-      name: "10k Paid Family Leave under 100k",
-      cost_of_one: "10000",
-      population: "2,324,740",
-      price: "400,000.00",
-      image: "🍼",
-      source_1: "https://www.census.gov/data/tables/2022/demo/fertility/women-fertility.html",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Eliminate All Medical Debt",
-      cost_of_one: "1",
-      population: "194000000000",
-      price: "194,000,000,000.00",
-      image: "🚑",
-      source_1: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12394938/",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Free Community College",
-      cost_of_one: "3,890",
-      population: "8,871,746",
-      price: "34,511,091,940.00",
-      image: "🏫",
-      source_1: "https://educationdata.org/average-cost-of-community-college",
-      source_2: "https://www.ed.gov/higher-education/find-college-or-educational-program/community-college/community-college-facts-glance",
-      notes: "this is some text showing a note of some kind."
-    },
-    {
-      name: "Free Birth under 100k",
-      cost_of_one: "20,416",
-      population: "2,324,740",
-      price: "47,461,891,840.00",
-      image: "🫄",
-      source_1: "https://www.investopedia.com/how-much-does-it-cost-to-have-a-baby-in-america-6745508",
-      source_2: "https://www.cdc.gov/nchs/fastats/births.htm",
-      notes: ""
-    },
-    {
-      name: "10k Paid Family Leave under 100k",
-      cost_of_one: "10000",
-      population: "2,324,740",
-      price: "23,247,400,000.00",
-      image: "🍼",
-      source_1: "https://www.census.gov/data/tables/2022/demo/fertility/women-fertility.html",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Eliminate All Medical Debt",
-      cost_of_one: "1",
-      population: "194000000000",
-      price: "194,000,000,000.00",
-      image: "🚑",
-      source_1: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12394938/",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Free Community College",
-      cost_of_one: "3,890",
-      population: "8,871,746",
-      price: "34,511,091,940.00",
-      image: "🏫",
-      source_1: "https://educationdata.org/average-cost-of-community-college",
-      source_2: "https://www.ed.gov/higher-education/find-college-or-educational-program/community-college/community-college-facts-glance",
-      notes: "this is some text showing a note of some kind."
-    },
-    {
-      name: "Free Birth under 100k",
-      cost_of_one: "20,416",
-      population: "2,324,740",
-      price: "47,461,891,840.00",
-      image: "🫄",
-      source_1: "https://www.investopedia.com/how-much-does-it-cost-to-have-a-baby-in-america-6745508",
-      source_2: "https://www.cdc.gov/nchs/fastats/births.htm",
-      notes: ""
-    },
-    {
-      name: "10k Paid Family Leave under 100k",
-      cost_of_one: "10000",
-      population: "2,324,740",
-      price: "23,247,400,000.00",
-      image: "🍼",
-      source_1: "https://www.census.gov/data/tables/2022/demo/fertility/women-fertility.html",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Eliminate All Medical Debt",
-      cost_of_one: "1",
-      population: "194000000000",
-      price: "194,000,000,000.00",
-      image: "🚑",
-      source_1: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12394938/",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Free Community College",
-      cost_of_one: "3,890",
-      population: "8,871,746",
-      price: "34,511,091,940.00",
-      image: "🏫",
-      source_1: "https://educationdata.org/average-cost-of-community-college",
-      source_2: "https://www.ed.gov/higher-education/find-college-or-educational-program/community-college/community-college-facts-glance",
-      notes: "this is some text showing a note of some kind."
-    },
-    {
-      name: "Free Birth under 100k",
-      cost_of_one: "20,416",
-      population: "2,324,740",
-      price: "47,461,891,840.00",
-      image: "🫄",
-      source_1: "https://www.investopedia.com/how-much-does-it-cost-to-have-a-baby-in-america-6745508",
-      source_2: "https://www.cdc.gov/nchs/fastats/births.htm",
-      notes: ""
-    },
-    {
-      name: "10k Paid Family Leave under 100k",
-      cost_of_one: "10000",
-      population: "2,324,740",
-      price: "23,247,400,000.00",
-      image: "🍼",
-      source_1: "https://www.census.gov/data/tables/2022/demo/fertility/women-fertility.html",
-      source_2: "",
-      notes: ""
-    },
-    {
-      name: "Eliminate All Medical Debt",
-      cost_of_one: "1",
-      population: "194000000000",
-      price: "194,000,000,000.00",
-      image: "🚑",
-      source_1: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12394938/",
-      source_2: "",
-      notes: ""
-    },
-  ]
+  // {
+  //   name: "Free Community College",
+  //   cost_of_one: "3,890",
+  //   population: "8,871,746",
+  //   price: "91,940.00",
+  //   image: "🏫",
+  //   source_1: "https://educationdata.org/average-cost-of-community-college",
+  //   source_2: "https://www.ed.gov/higher-education/find-college-or-educational-program/community-college/community-college-facts-glance",
+  //   notes: "this is some text showing a note of some kind."
+  // },
+  {
+    name: "Free Community College for 10,000 people",
+    price: "38,900,000",
+    image: "🎓",
+    source_1: "https://educationdata.org/average-cost-of-community-college",
+    notes: "3,890 x 10,000"
+  },
+  {
+    name: "Eliminate Average Medical Debt for 10,000 people",
+    price: "19,400,000",
+    image: "🚑",
+    source_1: "https://www.healthsystemtracker.org/brief/the-burden-of-medical-debt-in-the-united-states/",
+    notes: "194 billion / 100 million x 10,000"
+  },
+  {
+    name: "Cancel Student Loans for 10,000 Students",
+    price: "298,900,000",
+    image: "📚",
+    source_1: "https://www.usnews.com/education/best-colleges/paying-for-college/articles/see-how-student-loan-borrowing-has-changed",
+    notes: "29890 x 10,000"
+  },
+  {
+    name: "1 Year of SNAP Benefits for 10,000 People",
+    price: "21,240,000",
+    image: "🥗",
+    source_1: "https://www.fns.usda.gov/research/snap/characteristics-fy23",
+    notes: "2,124 x 10,000"
+  },
+  {
+    name: "Fund childcare for 10,000 Children",
+    price: "130,000,000",
+    image: "👧",
+    source_1: "https://www.childcareaware.org/price-landscape24/",
+    notes: "13,000 x 10,000"
+  },
+  {
+    name: "Fund 10,000 Childbirths",
+    price: "204,160,000",
+    image: "🫄",
+    source_1: "https://www.investopedia.com/how-much-does-it-cost-to-have-a-baby-in-america-6745508",
+    notes: "20,416 x 10,000"
+  },
+  {
+    name: "Maximum Pell Grants for 10,000 Students",
+    price: "73,950,000",
+    image: "💰",
+    source_1: "https://studentaid.gov/help-center/answers/article/how-much-money-can-i-get-federal-pell-grantt",
+    notes: "7,395 x 10,000"
+  },
+  {
+    name: "Yearly UBI of $1,000 Monthly for 10,000 People",
+    price: "120,000,000",
+    image: "💵",
+    source_1: "https://www.theunseenandtheunsaid.com/p/universal-basic-income-high-cost",
+    notes: "12,000 x 10,000"
+  },
+  {
+    name: "Free Public 4 Year College Tuition for 10,000 people",
+    price: "105,280,000",
+    image: "🎓",
+    source_1: "https://www.fns.usda.gov/research/snap/characteristics-fy23",
+    notes: "10,528 x 10,000"
+  },
+  {
+    name: "Pay off the Annual Public School Meal Debt",
+    price: "194,000,000",
+    image: "🍽️",
+    source_1: "https://educationdata.org/school-lunch-debt",
+    notes: "number in dataset"
+  },
+  {
+    name: "Provide A Year of Free Lunch to 10,000 US Children",
+    price: "5,560,000",
+    image: "🥪",
+    source_1: "https://educationdata.org/school-lunch-debt",
+    notes: "556 x 10000"
+  },
+  {
+    name: "Effectively End Homelessness in the United States (HUD 2012)",
+    price: "20,000,000,000",
+    image: "🏡",
+    source_1: "https://aah-inc.org/wp-content/uploads/2020/09/whomeless.pdf",
+    notes: "number from HUD (a bit old but v commonly cited)"
+  },
+  {
+    name: "Solve Homeless Crisis in Oakland",
+    price: "4,500,000,000",
+    image: "🏡",
+    source_1: "https://oaklandside.org/2022/11/28/oakland-spends-120-million-on-homelessness-carroll-fife/",
+    notes: "2022 estimate to house every current homeless person"
+  },
+  {
+    name: "Solve Homeless Crisis in Skid Row",
+    price: "5,000,000,000",
+    image: "🏡",
+    source_1: "https://www.costar.com/article/1042261897/this-downtown-la-tower-reflects-latest-national-approach-to-fight-homelessness",
+    notes: "4,400 × $1M = $4.4B -- current homless population"
+  }
+]
 
 // TO DO: IMPORT AND CORRECT IMAGES FOR BILL GATES, MARK ZUCKERBERG, LARRY PAGE, AND ALL 935 US BILLIONAIRES (if we don't want to use Mr. Krabs)
 var billionaires = [
-  {id: "jeff-bezos", name: "Jeff Bezos", title: "Founder of Amazon", money: 7272000000, image: "assets/jeff-bezos.png", wealth: 242400000000},
-  {id: "elon-musk", name: "Elon Musk", title: "CEO of Tesla & SpaceX", money: 21789000000, image: "assets/elon-musk.png", wealth: 726300000000},
-  {id: "bill-gates", name: "Bill Gates", title: "Co-founder of Microsoft", money: 3102000000, image: "assets/bill-gates.png", wealth: 103400000000},
-  {id: "mark-zuckerberg", name: "Mark Zuckerberg", title: "CEO of Meta", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000},
-  {id: "larry-ellison", name: "Larry Ellison", title: "Co-founder of Oracle", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000},
-  {id: "larry-page", name: "Larry Page", title: "Co-founder of Google", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000},
-  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", cowealth: 8160471719000}
+  { id: "jeff-bezos", name: "Jeff Bezos", title: "Founder of Amazon", money: 7272000000, image: "assets/jeff-bezos.png", wealth: 242400000000 },
+  { id: "elon-musk", name: "Elon Musk", title: "CEO of Tesla & SpaceX", money: 21789000000, image: "assets/elon-musk.png", wealth: 726300000000 },
+  { id: "bill-gates", name: "Bill Gates", title: "Co-founder of Microsoft", money: 3102000000, image: "assets/bill-gates.png", wealth: 103400000000 },
+  { id: "mark-zuckerberg", name: "Mark Zuckerberg", title: "CEO of Meta", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000 },
+  { id: "larry-ellison", name: "Larry Ellison", title: "Co-founder of Oracle", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000 },
+  { id: "larry-page", name: "Larry Page", title: "Co-founder of Google", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000 },
+  { id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", cowealth: 8160471719000 }
 ];
 
 const billionaireList = document.querySelector("#billionaire-selector");
@@ -184,14 +132,14 @@ billionaires.forEach((b, i) => {
   const li = document.createElement("li");
   li.classList.add("billionaire-card");
   li.id = b.id;
-   li.style.setProperty('--index', i);
+  li.style.setProperty('--index', i);
   li.innerHTML = `<img src="${b.image}" alt="${b.name}"><span>${b.name}</span>`;
   billionaireList.appendChild(li);
   b.element = li;
 });
 
 function selectBillionaire(li) {
-  if(currentBillionaire){
+  if (currentBillionaire) {
     billionaireList.appendChild(currentBillionaire.element);
   }
 
@@ -253,7 +201,7 @@ const checkoutBtn = document.querySelector("#checkout-btn");
 function updateCart() {
   cartContent.innerHTML = "";
   const activeCards = document.querySelectorAll(".product-card.active");
-  if(activeCards.length === 0) {
+  if (activeCards.length === 0) {
     cartContent.innerHTML = "<p class='cart-empty'>Your cart is empty.</p>";
     checkoutBtn.disabled = true;
     checkoutBtn.classList.add("disabled");
@@ -298,9 +246,9 @@ function showSpentMessage() {
 }
 
 function toggleCard(card) {
-  if(!currentBillionaire) {
+  if (!currentBillionaire) {
     const defaultBillionaire = document.querySelector("#mark-zuckerberg");
-    if(defaultBillionaire) selectBillionaire(defaultBillionaire);
+    if (defaultBillionaire) selectBillionaire(defaultBillionaire);
   }
   const price = parseFloat(card.dataset.price);
   const isAdding = !card.classList.contains("active");
@@ -309,7 +257,7 @@ function toggleCard(card) {
     return;
   }
   card.classList.toggle("active");
-  if(card.classList.contains("active")){
+  if (card.classList.contains("active")) {
     currentBillionaire.money -= price;
   } else {
     currentBillionaire.money += price;
@@ -327,7 +275,7 @@ document.querySelectorAll(".product-card").forEach(card => {
 });
 
 
-function formatMoney(amount){
+function formatMoney(amount) {
   if (amount < 0) {
     return "Taxes owed: -$" + Math.abs(amount).toLocaleString();
   }

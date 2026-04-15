@@ -60,6 +60,7 @@ html, body {
   color: var(--black);
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 10%;
   padding: 10px 15px;
   text-align: center;
@@ -81,7 +82,8 @@ html, body {
   font-weight: 400;
   color: var(--black);
   letter-spacing: 1px;
-  margin: 25px 0px;
+  margin: 25px auto;
+
   padding: 0px;
 }
 
@@ -851,16 +853,33 @@ footer a{
 }
 
 @media screen and (max-width: 1240px) {
+  #billionaire-container {
+    flex-direction: column;
+  }
 
+  .title h1{
+    font-size: 45px;
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
+
+.product-card{
+  width: 90%;
+  max-width: 90%;
+}
 
 .title{
   flex-direction: column;
   margin: 10px;
   gap: 0px;
 }
+
+  hr{
+    display: none;
+  }
 
 .title h1{
   font-size: 45px;
@@ -874,12 +893,16 @@ footer a{
   text-align: center;
   border: 2px solid var(--black);
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #please-change-font{
    font-size: 21px;
-   margin: 10px 0px;
-   padding: 0px
+   margin: 10px auto;
+   padding: 0px;
+
 }
 
   #view-sources,
@@ -888,6 +911,7 @@ footer a{
   }
 
   .mobile-take-action {
+    width: 90%;
     display: flex !important;
     font-family: "RL Horizon", sans-serif;
     font-size: 14px;
@@ -898,10 +922,12 @@ footer a{
     cursor: pointer;
     text-decoration: none;
     margin: 0.5em auto;
-    padding: 2.5px 5px;
+    padding: 10px 5px;
     border: 2px solid var(--black);
-    color: var(--black);
-    transition: background-color 0.2s, color 0.2s;
+    color: var(--white);
+    /* transition: background-color 0.2s, color 0.2s;
+    */
+    background-color: (--black);
   }
 
   .mobile-take-action:hover {
