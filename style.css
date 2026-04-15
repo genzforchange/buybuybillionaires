@@ -366,6 +366,18 @@ hr{
   color: #555;
 }
 
+.receipt-footer-info {
+  border-top: 2px dashed #999;
+  padding-top: 0.75em;
+  margin-top: 0.75em;
+}
+
+.receipt-footer-info p {
+  font-family: "receipt-narrow", sans-serif;
+  font-size: 13px;
+  margin: 0.2em 0;
+}
+
 .receipt-thanks {
   text-align: center;
   font-family: "receipt-narrow", sans-serif;
