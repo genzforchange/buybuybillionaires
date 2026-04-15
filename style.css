@@ -273,8 +273,14 @@ hr{
   transition: background-color 0.2s;
 }
 
-.checkout-btn:hover {
+.checkout-btn:hover:not(.disabled) {
   background-color: #d63631;
+}
+
+.checkout-btn.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .receipt-overlay {
@@ -617,8 +623,8 @@ li{
 
 #billionaire-name .billionaire-title {
   display: block;
-  font-family: "archivo", sans-serif;
-  font-size: 12px !important;
+  font-family: "receipt-narrow", sans-serif;
+  font-size: 14px !important;
   font-weight: 400;
   letter-spacing: 0;
   opacity: 0.7;

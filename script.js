@@ -256,8 +256,12 @@ function updateCart() {
   const activeCards = document.querySelectorAll(".product-card.active");
   if(activeCards.length === 0) {
     cartContent.innerHTML = "<p class='cart-empty'>Your cart is empty.</p>";
+    checkoutBtn.disabled = true;
+    checkoutBtn.classList.add("disabled");
     return;
   }
+  checkoutBtn.disabled = false;
+  checkoutBtn.classList.remove("disabled");
   const ul = document.createElement("ul");
   ul.classList.add("cart-list");
   activeCards.forEach(card => {
