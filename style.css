@@ -308,7 +308,7 @@ hr{
 
 .receipt-header {
   text-align: center;
-  border-bottom: 2px dashed #999;
+  /* border-bottom: 2px dashed #999; */
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
@@ -350,9 +350,8 @@ hr{
 .receipt-total {
   display: flex;
   justify-content: space-between;
-  padding: 0.75em 0 0.25em;
-  margin-top: 0.5em;
-  border-top: 2px dashed #151515;
+  padding: 0.25em 0 0.25em;
+  margin-top: 0.2em;
   font-family: "receipt-narrow", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -370,9 +369,9 @@ hr{
 .receipt-item-count {
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0 0.25em;
+  padding: 0.75em 0 0.25em;
   margin-top: 0.5em;
-  border-top: 1px dotted #999;
+   border-top: 2px dashed #151515;
   font-family: "receipt-narrow", sans-serif;
   font-size: 14px;
 }
@@ -404,31 +403,9 @@ hr{
   margin: 0.5em 0;
 }
 
-.barcode-bars {
+.receipt-barcode img {
   width: 60%;
-  height: 40px;
-  background: repeating-linear-gradient(
-    90deg,
-    #000 0px, #000 1px,
-    transparent 1px, transparent 3px,
-    #000 3px, #000 5px,
-    transparent 5px, transparent 7px,
-    #000 7px, #000 8px,
-    transparent 8px, transparent 11px,
-    #000 11px, #000 13px,
-    transparent 13px, transparent 14px,
-    #000 14px, #000 15px,
-    transparent 15px, transparent 18px,
-    #000 18px, #000 20px,
-    transparent 20px, transparent 21px,
-    #000 21px, #000 23px,
-    transparent 23px, transparent 26px,
-    #000 26px, #000 27px,
-    transparent 27px, transparent 28px,
-    #000 28px, #000 30px,
-    transparent 30px, transparent 32px
-  );
-  background-size: 32px 40px;
+  height: auto;
 }
 
 .receipt-thanks {
@@ -438,7 +415,7 @@ hr{
   color: #555;
   margin-top: 1.5em;
   margin-bottom: 0;
-  border-top: 2px dashed #999;
+  /* border-top: 2px dashed #999; */
   padding-top: 1em;
 }
 
