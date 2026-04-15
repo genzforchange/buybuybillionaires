@@ -846,6 +846,10 @@ footer a{
   text-decoration: underline;
 }
 
+.mobile-take-action {
+  display: none;
+}
+
 @media screen and (max-width: 1240px) {
 
 }
@@ -878,8 +882,20 @@ footer a{
    padding: 0px
 }
 
-  #view-sources {
+  #view-sources,
+  #take-action {
     display: none !important;
+  }
+
+  .mobile-take-action {
+    display: block !important;
+    font-family: "archivo", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0.5em 0;
   }
 
   .footer-sources-link {
