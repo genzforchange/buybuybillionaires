@@ -250,6 +250,7 @@ products.forEach(product => {
 });
 
 const cartContent = document.querySelector("#cart-content");
+const checkoutBtn = document.querySelector("#checkout-btn");
 
 function updateCart() {
   cartContent.innerHTML = "";
@@ -290,7 +291,7 @@ function updateCart() {
 function showSpentMessage() {
   billionaireMoney.classList.remove("spent-shake");
   void billionaireMoney.offsetWidth;
-  billionaireMoney.innerHTML = "Congrats, you spent it all!";
+  billionaireMoney.innerHTML = "Congrats, you spent all you can!";
   billionaireMoney.classList.add("spent-shake");
   setTimeout(() => {
     billionaireMoney.innerHTML = formatMoney(currentBillionaire.money);
@@ -366,7 +367,6 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
   });
 });
 
-const checkoutBtn = document.querySelector("#checkout-btn");
 const receiptOverlay = document.querySelector("#receipt-overlay");
 const receiptItems = document.querySelector("#receipt-items");
 const receiptTotal = document.querySelector("#receipt-total");
