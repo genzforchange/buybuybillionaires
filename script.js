@@ -272,6 +272,15 @@ function updateCart() {
     ul.appendChild(li);
   });
   cartContent.appendChild(ul);
+
+  let total = 0;
+  activeCards.forEach(card => {
+    total += parseFloat(card.dataset.price);
+  });
+  const totalDiv = document.createElement("div");
+  totalDiv.classList.add("cart-total");
+  totalDiv.innerHTML = `<span>Total</span><span>${formatShortMoney(total)}</span>`;
+  cartContent.appendChild(totalDiv);
 }
 
 function toggleCard(card) {
