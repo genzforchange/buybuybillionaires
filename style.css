@@ -902,6 +902,8 @@ footer a{
    font-size: 21px;
    margin: 10px auto;
    padding: 0px;
+  max-width:90%;
+  
 
 }
 
@@ -927,7 +929,7 @@ footer a{
     color: var(--white);
     /* transition: background-color 0.2s, color 0.2s;
     */
-    background-color: (--black);
+    background-color: var(--black);
   }
 
   .mobile-take-action:hover {
