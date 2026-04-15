@@ -152,6 +152,15 @@ function selectBillionaire(li) {
     billionaireList.appendChild(currentBillionaire.element);
   }
 
+  if (currentBillionaire) {
+    currentBillionaire.money = currentBillionaire.wealth;
+  }
+  document.querySelectorAll(".product-card.active").forEach(card => {
+    card.classList.remove("active");
+    card.querySelector(".add-button").textContent = "Add";
+  });
+  updateCart();
+
   const b = billionaires.find(b => b.id === li.id);
   currentBillionaire = b;
 
