@@ -445,6 +445,20 @@ document.querySelector("#share-receipt-btn").addEventListener("click", (e) => {
   });
 });
 
+function openActions() {
+  document.querySelector("#actions-overlay").classList.add("visible");
+}
+
+function closeActions() {
+  document.querySelector("#actions-overlay").classList.remove("visible");
+}
+
+document.querySelector("#actions-overlay").addEventListener("click", function(e) {
+  if (e.target === document.querySelector("#actions-overlay")) {
+    closeActions();
+  }
+});
+
 function openSources() {
   var sourcesOverlay = document.querySelector("#sources-overlay");
   var sourcesList = document.querySelector("#sources-list");
