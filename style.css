@@ -903,20 +903,28 @@ footer a{
    margin: 10px auto;
    padding: 0px;
   max-width:90%;
-  
+  text-align: center;
 
 }
+
+  .desktop-only {
+    display: none;
+  }
 
   #view-sources,
   #take-action {
     display: none !important;
   }
 
+  #instructions{
+    font-size: 16px;
+  }
+
   .mobile-take-action {
     width: 90%;
     display: flex !important;
     font-family: "RL Horizon", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     text-align: center;
     align-items: center;
