@@ -7,92 +7,103 @@
   <title>Buy Buy Billionaires</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!-- Adobe Fonts -->
+  <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/ldu5rur.css">
 
 </head>
-    
+
 <body>
 
-<div class="wrapper">
-  <header>
-    <div class="title">
+  <div class="wrapper">
+    <header>
+      <div class="title">
         <div class="context">
-          <p>Yee haw Yee haw Yee haw.  Take Action.</p>
-        </div>  
-    <h1>Buy Buy Billionaire$</h1>
-        <div class="context">
-          <p>Yee haw Yee haw Yee haw.  View sources.</p>
-        </div>  
+          <p>Yee haw Yee haw Yee haw. Take Action.</p>
+        </div>
+        <h1>Buy Buy Billionaire$</h1>
+        <div class="context sources-link" id="view-sources">
+          <p>Yee haw Yee haw Yee haw. View sources.</p>
+        </div>
       </div>
     </header>
-  <p id="please-change-font">what could we buy if billionaires were fairly taxed?</p>
-  <hr>
-  
-  <div class="main">
-    
-  <div class="shopping">
-  <div id="billionaire-container">
-    <p id="instructions">Choose a <br>billionaire:</p>
-    <ul id="billionaire-selector"></ul>
-  </div>
+    <p id="please-change-font">what could we buy if billionaires were fairly taxed?</p>
+    <hr>
 
-    <div class="products-container">
-    </div>
+    <div class="main">
 
-    <div class="counter">
-      <div id="selected-info">
-        <div id="selected-head"></div>
-        <div id="cart-container">
-        <div id="cart-stats">
-           <span id="billionaire-name"></span>
-          <span id="billionaire-money"></span>
-        </div> <button type="button" class="collapsible cart"><img src="assets/cart.svg" alt="cart" id="cart"></button>
+      <div class="shopping">
+        <div id="billionaire-container">
+          <p id="instructions">Choose a <br>billionaire:</p>
+          <ul id="billionaire-selector"></ul>
         </div>
-      </div>      
-      
-  
-      <div class="content" id="cart-content">
+
+        <div class="products-container">
+        </div>
+
+        <div class="counter">
+          <div id="selected-info">
+            <div id="selected-head"></div>
+            <div id="cart-container">
+              <div id="cart-stats">
+                <span id="billionaire-name"></span>
+                <span id="billionaire-money"></span>
+              </div> <button type="button" class="collapsible cart"><img src="assets/cart.svg" alt="cart"
+                  id="cart"></button>
+            </div>
+          </div>
+
+
+          <div class="content" id="cart-content">
+          </div>
+          <button id="checkout-btn" class="checkout-btn">Checkout</button>
+        </div>
+
+        <div id="receipt-overlay" class="receipt-overlay">
+          <div id="receipt" class="receipt">
+            <div class="receipt-header">
+              <h2>Buy Buy Billionaire$</h2>
+            </div>
+            <div id="receipt-stamps" class="receipt-stamps"></div>
+            <div class="receipt-info">
+              <p>Date: <span id="receipt-date"></span></p>
+              <p>Accountholder: <span id="receipt-name"></span></p>
+              <p>Fair Taxes Owed: <span id="receipt-original-balance"></span></p>
+            </div>
+            <div id="receipt-items"></div>
+            <div id="receipt-total" class="receipt-total"></div>
+            <div id="receipt-remaining" class="receipt-remaining"></div>
+            <div class="receipt-footer-info">
+              <p>Card: **** **** **** ****</p>
+              <p>Issuer: Gen-Z for Change</p>
+            </div>
+            <p class="receipt-tagline">What could we buy if billionaires were fairly taxed?</p>
+            <div class="receipt-barcode">
+              <img src="assets/barcode.png" alt="barcode">
+            </div>
+            <p class="receipt-thanks">Thank you for finally paying your taxes!</p>
+          </div>
+          <button id="share-receipt-btn" class="share-receipt-btn">Share Receipt</button>
+        </div>
       </div>
-      <button id="checkout-btn" class="checkout-btn">Checkout</button>
     </div>
 
-    <div id="receipt-overlay" class="receipt-overlay">
-      <div id="receipt" class="receipt">
-        <div class="receipt-header">
-          <h2>Buy Buy Billionaire$</h2>
-        </div>
-        <div id="receipt-stamps" class="receipt-stamps"></div>
-        <div class="receipt-info">
-          <p>Date: <span id="receipt-date"></span></p>
-          <p>Accountholder: <span id="receipt-name"></span></p>
-          <p>Fair Taxes Owed: <span id="receipt-original-balance"></span></p>
-        </div>
-        <div id="receipt-items"></div>
-        <div id="receipt-total" class="receipt-total"></div>
-        <div id="receipt-remaining" class="receipt-remaining"></div>
-        <div class="receipt-footer-info">
-          <p>Card: **** **** **** ****</p>
-          <p>Issuer: Gen-Z for Change</p>
-        </div>
-        <p class="receipt-tagline">What could we buy if billionaires were fairly taxed?</p>
-        <div class="receipt-barcode">
-          <img src="assets/barcode.png" alt="barcode">
-        </div>
-        <p class="receipt-thanks">Thank you for finally paying your taxes!</p>
+
+
+    <div id="sources-overlay" class="sources-overlay">
+      <div class="sources-popup">
+        <button class="sources-close">&times;</button>
+        <h2 class="sources-title">Sources</h2>
+        <p class="sources-description">Here are the sources behind each item in the shop. All costs and population figures are cited below.</p>
+        <div id="sources-list" class="sources-list"></div>
       </div>
-      <button id="share-receipt-btn" class="share-receipt-btn">Share Receipt</button>
     </div>
-    </div>
+
+    <footer>
+      <p> inspired by <a href="https://neal.fun/spend/" target="_blank">neal.fun</a></p>
+      <p>made with ❤️ by <a href="https://genzforchange.org/" target="none">gen-z for change's</a> meddling kids</p>
+    </footer>
+
   </div>
-
-
-
-<footer>
-  <p>made with ❤️ by <a href="https://genzforchange.org/" target="none">gen-z for change's</a> meddling kids</p>
-</footer>
-  
-</div>
 
 
 

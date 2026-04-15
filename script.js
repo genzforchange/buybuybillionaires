@@ -1,6 +1,4 @@
 // TO DO: REPLACE PRODUCTS WITH UPDATED DATA FROM GOOGLE SHEET. Sofia formatted this by exporting from google sheets to CSV and then converting to JSON with an online converter.
-
-// TO DO: DETERMINE WHETHER WE'D LIKE TO CHANGE FROM EMOJIS TO IMAGES. IF SO, REPLACE THE EMOJI WITH THE IMAGE PATH.
 var products = [
     {
       name: "Free Community College",
@@ -172,7 +170,7 @@ var billionaires = [
   {id: "mark-zuckerberg", name: "Mark Zuckerberg", title: "CEO of Meta", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000},
   {id: "larry-ellison", name: "Larry Ellison", title: "Co-founder of Oracle", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000},
   {id: "larry-page", name: "Larry Page", title: "Co-founder of Google", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000},
-  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", wealth: 8160471719000}
+  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", cowealth: 8160471719000}
 ];
 
 const billionaireList = document.querySelector("#billionaire-selector");
@@ -331,9 +329,9 @@ document.querySelectorAll(".product-card").forEach(card => {
 
 function formatMoney(amount){
   if (amount < 0) {
-    return "Balance: -$" + Math.abs(amount).toLocaleString();
+    return "Taxes owed: -$" + Math.abs(amount).toLocaleString();
   }
-  return "Balance: $" + amount.toLocaleString();
+  return "Taxes owed: $" + amount.toLocaleString();
 }
 
 document.querySelectorAll(".collapsible").forEach(function(btn) {
@@ -445,6 +443,34 @@ document.querySelector("#share-receipt-btn").addEventListener("click", (e) => {
       }
     }, "image/png");
   });
+});
+
+const sourcesOverlay = document.querySelector("#sources-overlay");
+const sourcesList = document.querySelector("#sources-list");
+
+document.querySelector("#view-sources").addEventListener("click", () => {
+  sourcesList.innerHTML = "";
+  const seen = new Set();
+  products.forEach(p => {
+    if (seen.has(p.name)) return;
+    seen.add(p.name);
+    const item = document.createElement("div");
+    item.classList.add("sources-item");
+    let html = `<p class="sources-product-name">${p.name}</p>`;
+    if (p.source_1) html += `<p class="sources-link-text">Source: <a href="${p.source_1}" target="_blank">${p.source_1}</a></p>`;
+    if (p.source_2) html += `<p class="sources-link-text">Source: <a href="${p.source_2}" target="_blank">${p.source_2}</a></p>`;
+    item.innerHTML = html;
+    sourcesList.appendChild(item);
+  });
+  sourcesOverlay.classList.add("visible");
+});
+
+sourcesOverlay.addEventListener("click", (e) => {
+  if (e.target === sourcesOverlay) sourcesOverlay.classList.remove("visible");
+});
+
+document.querySelector(".sources-close").addEventListener("click", () => {
+  sourcesOverlay.classList.remove("visible");
 });
 
 // TO DO: ADD RESET FUNCTIONALITY IN JS THAT RESETS THE CART ITEMS WHEN A NEW BILLIONAIRE IS CHOSEN (currently this results in an error that doesn't calculate the money properly when a new billionaire is chosen)
