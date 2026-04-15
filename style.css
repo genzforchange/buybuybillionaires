@@ -292,10 +292,11 @@ hr{
 
 .receipt-overlay.visible {
   display: flex;
+  flex-direction: column;
 }
 
 .receipt {
-  background: url('assets/paper-texture.jpg') center/cover;
+  background: url('assets/receipt-paper.png') center/cover;
   color: #151515;
   width: 350px;
   max-height: 80vh;

@@ -410,7 +410,8 @@ receiptOverlay.addEventListener("click", (e) => {
   }
 });
 
-document.querySelector("#share-receipt-btn").addEventListener("click", () => {
+document.querySelector("#share-receipt-btn").addEventListener("click", (e) => {
+  e.stopPropagation();
   const receiptEl = document.querySelector("#receipt");
   html2canvas(receiptEl, { backgroundColor: null, useCORS: true, scale: 2 }).then(canvas => {
     canvas.toBlob(blob => {
