@@ -107,7 +107,14 @@ var products = [
     image: "🏡",
     source_1: "https://www.costar.com/article/1042261897/this-downtown-la-tower-reflects-latest-national-approach-to-fight-homelessness",
     notes: "4,400 × $1M = $4.4B -- current homless population"
-  }
+  },
+  {
+    name: "Solve the Flint, MI Water Crisis",
+    price: "216,000,000",
+    image: "💧",
+    source_1: "https://www.theguardian.com/us-news/2016/jun/06/flint-water-crisis-lead-pipes-infrastructure-cost",
+    notes: "number from state report"
+  },
 ]
 
 // TO DO: IMPORT AND CORRECT IMAGES FOR BILL GATES, MARK ZUCKERBERG, LARRY PAGE, AND ALL 935 US BILLIONAIRES (if we don't want to use Mr. Krabs)
@@ -394,7 +401,7 @@ document.querySelector("#share-receipt-btn").addEventListener("click", (e) => {
     canvas.toBlob(blob => {
       if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], "receipt.png", { type: "image/png" })] })) {
         const file = new File([blob], "receipt.png", { type: "image/png" });
-        navigator.share({ files: [file], title: "Buy Buy Billionaire$ Receipt" });
+        navigator.share({ files: [file], title: "Buy Buy Billionaire$ Receipt. Get your receipt here: https://buybuybillionaires.com" });
       } else {
         const link = document.createElement("a");
         link.download = "buy-buy-billionaires-receipt.png";
