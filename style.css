@@ -662,8 +662,8 @@ li{
 }
 
 .billionaire-card img {
-  height: 100%;
-  /* border-radius: 50%; */
+  height: 80px;
+  width: auto;
   transition: transform 0.35s ease;
 }
 
