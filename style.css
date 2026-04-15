@@ -616,10 +616,12 @@ li{
 }
 
 .billionaire-title {
+  display: block;
   font-family: "archivo", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0;
+  opacity: 0.7;
 }
 
 #billionaire-money{

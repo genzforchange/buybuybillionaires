@@ -203,7 +203,7 @@ function selectBillionaire(li) {
   selectedHeadContainer.innerHTML = "";
   selectedHeadContainer.appendChild(b.element);
 
-  billionaireName.innerHTML = b.name + ", <span class='billionaire-title'>" + b.title + "</span>";
+  billionaireName.innerHTML = b.name + "<br><span class='billionaire-title'>" + b.title + "</span>";
   billionaireMoney.innerHTML = formatMoney(b.money);
 
   document.querySelector(".counter").classList.add("visible");
