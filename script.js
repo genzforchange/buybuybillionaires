@@ -214,17 +214,14 @@ products.forEach(product => {
 });
 
 const cartContent = document.querySelector("#cart-content");
-const checkoutBtn = document.querySelector("#checkout-btn");
 
 function updateCart() {
   cartContent.innerHTML = "";
   const activeCards = document.querySelectorAll(".product-card.active");
   if (activeCards.length === 0) {
     cartContent.innerHTML = "<p class='cart-empty'>Your cart is empty.</p>";
-    checkoutBtn.style.display = "none";
     return;
   }
-  checkoutBtn.style.display = "block";
   const ul = document.createElement("ul");
   ul.classList.add("cart-list");
   activeCards.forEach(card => {
@@ -248,6 +245,13 @@ function updateCart() {
   totalDiv.classList.add("cart-total");
   totalDiv.innerHTML = `<span>Total</span><span>${formatShortMoney(total)}</span>`;
   cartContent.appendChild(totalDiv);
+
+  const checkoutBtn = document.createElement("button");
+  checkoutBtn.id = "checkout-btn";
+  checkoutBtn.classList.add("checkout-btn");
+  checkoutBtn.textContent = "Checkout";
+  checkoutBtn.addEventListener("click", handleCheckout);
+  cartContent.appendChild(checkoutBtn);
 }
 
 function showSpentMessage() {
@@ -309,13 +313,10 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
         if (content.style.display === "block") {
           content.style.display = "none";
           cartIcon.src = "assets/cart.svg";
-          checkoutBtn.style.display = "none";
         } else {
           updateCart();
           content.style.display = "block";
           cartIcon.src = "assets/collapse.svg";
-          var hasItems = document.querySelectorAll(".product-card.active").length > 0;
-          checkoutBtn.style.display = hasItems ? "block" : "none";
         }
       }
       return;
@@ -339,7 +340,7 @@ const receiptName = document.querySelector("#receipt-name");
 const receiptOriginalBalance = document.querySelector("#receipt-original-balance");
 const receiptRemaining = document.querySelector("#receipt-remaining");
 
-checkoutBtn.addEventListener("click", () => {
+function handleCheckout() {
   const activeCards = document.querySelectorAll(".product-card.active");
   if (activeCards.length === 0 || !currentBillionaire) return;
 
@@ -387,7 +388,7 @@ checkoutBtn.addEventListener("click", () => {
   receiptTotal.innerHTML = `<span>Total</span><span>$${total.toLocaleString()}</span>`;
   receiptRemaining.innerHTML = `<span>Remaining</span><span>$${currentBillionaire.money.toLocaleString()}</span>`;
   receiptOverlay.classList.add("visible");
-});
+}
 
 receiptOverlay.addEventListener("click", (e) => {
   if (e.target === receiptOverlay) {
