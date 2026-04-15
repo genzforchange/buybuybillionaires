@@ -118,7 +118,7 @@ var billionaires = [
   { id: "mark-zuckerberg", name: "Mark Zuckerberg", title: "CEO of Meta", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000 },
   { id: "larry-ellison", name: "Larry Ellison", title: "Co-founder of Oracle", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000 },
   { id: "larry-page", name: "Larry Page", title: "Co-founder of Google", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000 },
-  { id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", cowealth: 8160471719000 }
+  { id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", wealth: 8160471719000 }
 ];
 
 const billionaireList = document.querySelector("#billionaire-selector");
@@ -139,6 +139,7 @@ billionaires.forEach((b, i) => {
 });
 
 var cashRegisterSound = new Audio("assets/cash-register.mp3");
+var receiptPrinterSound = new Audio("assets/receipt-printer.mp3");
 
 function playCashRegister() {
   cashRegisterSound.currentTime = 0;
@@ -333,6 +334,9 @@ const receiptRemaining = document.querySelector("#receipt-remaining");
 checkoutBtn.addEventListener("click", () => {
   const activeCards = document.querySelectorAll(".product-card.active");
   if (activeCards.length === 0 || !currentBillionaire) return;
+
+  receiptPrinterSound.currentTime = 0;
+  receiptPrinterSound.play();
 
   const now = new Date();
   document.querySelector("#receipt-date").textContent = now.toLocaleString();
