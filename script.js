@@ -309,6 +309,17 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
     var content;
     if (this.classList.contains("cart")) {
       content = document.querySelector("#cart-content");
+      var cartIcon = this.querySelector("#cart");
+      if (content && cartIcon) {
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          cartIcon.src = "assets/cart.svg";
+        } else {
+          content.style.display = "block";
+          cartIcon.src = "assets/collapse.svg";
+        }
+      }
+      return;
     } else {
       content = this.nextElementSibling;
     }

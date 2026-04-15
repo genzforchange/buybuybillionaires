@@ -40,7 +40,7 @@ html, body {
   flex-direction: row;
   align-items: center;
   margin: 25px;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -199,6 +199,8 @@ hr{
 
 }
 
+.cart-empty
+
 .product-card.active .add-button{
   background-color: red;
   transform: rotate(45deg);
@@ -207,15 +209,9 @@ hr{
 
 
 .product-card.active {
-  background-color: #c2ccd6;
-  color: #fff;
-  transition: .2s;
-
-}
-
-.product-card.active {
-  background-color: #c2ccd6;
-  color: #fff;
+  opacity: .75;
+  background-color: #fbfbfb;
+  color: #000;
   transition: .2s;
 
 }
@@ -291,11 +287,6 @@ li{
   font-size: 12px;
 }
 
-.billionaire-card:hover span{
-  opacity: 1;
-  font-family: "archivo", sans-serif;
-  font-size: 16px;
-}
 
 
 /*#billionaire-selector:hover .billionaire-card {
@@ -424,6 +415,11 @@ li{
   font-family: "archivo", sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
+}
+
+#selected-head li span{
+  opacity: 0;
+  display: none;
 }
 
 @media screen and (max-width: 1240px) {
