@@ -305,7 +305,8 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
         } else {
           content.style.display = "block";
           cartIcon.src = "assets/collapse.svg";
-          checkoutBtn.style.display = "block";
+          var hasItems = document.querySelectorAll(".product-card.active").length > 0;
+          checkoutBtn.style.display = hasItems ? "block" : "none";
         }
       }
       return;
