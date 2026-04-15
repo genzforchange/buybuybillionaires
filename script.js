@@ -103,7 +103,7 @@ var products = [
   },
   {
     name: "Solve Homeless Crisis in Skid Row",
-    price: "5,000,000,000",
+    price: "4,400,000,000",
     image: "🏡",
     source_1: "https://www.costar.com/article/1042261897/this-downtown-la-tower-reflects-latest-national-approach-to-fight-homelessness",
     notes: "4,400 × $1M = $4.4B -- current homless population"
@@ -145,20 +145,12 @@ billionaires.forEach((b, i) => {
   b.element = li;
 });
 
-var cashRegisterSound = new Audio("assets/cash-register.mp3");
 var receiptPrinterSound = new Audio("assets/receipt-printer.mp3");
-
-function playCashRegister() {
-  cashRegisterSound.currentTime = 0;
-  cashRegisterSound.play();
-}
 
 function selectBillionaire(li) {
   if (currentBillionaire) {
     billionaireList.appendChild(currentBillionaire.element);
   }
-
-  playCashRegister();
 
   const b = billionaires.find(b => b.id === li.id);
   currentBillionaire = b;
