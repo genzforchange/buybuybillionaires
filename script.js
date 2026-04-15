@@ -436,4 +436,16 @@ document.querySelector(".sources-close").addEventListener("click", function() {
   document.querySelector("#sources-overlay").classList.remove("visible");
 });
 
+setInterval(function() {
+  var cartIcon = document.querySelector("#cart");
+  if (cartIcon) {
+    cartIcon.classList.remove("cart-blink");
+    void cartIcon.offsetWidth;
+    cartIcon.classList.add("cart-blink");
+    cartIcon.addEventListener("animationend", function() {
+      cartIcon.classList.remove("cart-blink");
+    }, { once: true });
+  }
+}, 10000);
+
 // TO DO: ADD RESET FUNCTIONALITY IN JS THAT RESETS THE CART ITEMS WHEN A NEW BILLIONAIRE IS CHOSEN (currently this results in an error that doesn't calculate the money properly when a new billionaire is chosen)

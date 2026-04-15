@@ -57,7 +57,7 @@ html, body {
 
 .context{
   font-family: "RL Horizon", sans-serif;
-  color: var(--black);
+  /* color: var(--black); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,13 +66,16 @@ html, body {
   text-align: center;
   border: 2px solid var(--black);
   font-size: 14px;
-  transition: background-color 0.2s, color 0.2s;
+  background-color: var(--black);
+  color: #fac146;
+  /* font-weight: 700; */
+  /* transition: background-color 0.2s, color 0.2s; */
 }
 
 .context:hover {
-  background-color: var(--black);
-  color: #FBFBFB;
-  font-weight: 700;
+  background-color: #fac146;
+  color: var(--black);
+  /* font-weight: 700; */
 }
 
 #please-change-font{
@@ -791,6 +794,20 @@ li{
 #cart{
   height: 30px;
   text-align: right;
+}
+
+@keyframes cart-blink-yellow {
+  0% { filter: none; }
+  20% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
+  40% { filter: none; }
+  60% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
+  80% { filter: none; }
+  90% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
+  100% { filter: none; }
+}
+
+.cart-blink {
+  animation: cart-blink-yellow 1.5s ease;
 }
 
 #cart-container{
