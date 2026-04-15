@@ -479,6 +479,7 @@ hr{
   font-family: "receipt-narrow", sans-serif;
   font-size: 14px;
   border-bottom: 1px dotted #999;
+  gap: 5px;
 }
 
 .receipt-total {
