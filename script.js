@@ -310,7 +310,7 @@ document.querySelectorAll(".product-card").forEach(card => {
 
 function formatMoney(amount){
   if (amount < 0) {
-    return "-Balance: $" + Math.abs(amount).toLocaleString();
+    return "Balance: -$" + Math.abs(amount).toLocaleString();
   }
   return "Balance: $" + amount.toLocaleString();
 }

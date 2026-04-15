@@ -56,7 +56,7 @@ html, body {
 }
 
 .context{
-  font-family: "archivo", sans-serif;
+  font-family: "RL Horizon", sans-serif;
   color: var(--black);
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@ html, body {
   padding: 10px 15px;
   text-align: center;
   border: 2px solid var(--black);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #please-change-font{
@@ -100,7 +100,7 @@ hr{
 }
 
 #instructions{
-  font-family: "archivo", sans-serif;
+  font-family: "RL Horizon", sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
   margin: 0px;
@@ -132,7 +132,7 @@ hr{
   text-align: center;
 }
 .product-card h4 {
-  font-family: "archivo", sans-serif;
+  font-family: "RL Horizon", sans-serif;
   font-size: 21px;
   line-height: 21px;
   letter-spacing: 1px;
@@ -201,7 +201,7 @@ hr{
 
 .cart-empty{
   font-family: "archivo", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   letter-spacing: 1px
 }
 
@@ -343,8 +343,8 @@ li{
 
 .billionaire-card span {
   display: block;
-  font-family: "archivo", sans-serif;
-  font-size: 12px;
+  font-family: "RL Horizon", sans-serif;
+  font-size: 14px;
 }
 
 
@@ -368,7 +368,7 @@ li{
 #selected-head img{
   height: 75px;
   border-radius:50%;
-  /* filter: drop-shadow(0 0 10px gold); */
+  filter: grayscale(100%);
 }
 
 .counter {
@@ -407,7 +407,7 @@ li{
 
 .counter p{
   font-family: "archivo", sans-serif;
-  font-size: 26px;
+  font-size: 16px;
   letter-spacing: 1px
 }
 
@@ -472,7 +472,7 @@ li{
 }
 
 #cart-stats span{
-  font-family: "archivo", sans-serif;
+  font-family: "Receipt Narrow", sans-serif;
   font-size: 21px;
   letter-spacing: 1px;
 }
@@ -505,7 +505,7 @@ li{
   padding: 2.5px 5px;
   text-align: center;
   border: 2px solid var(--black);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 #please-change-font{
