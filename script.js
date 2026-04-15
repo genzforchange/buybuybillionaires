@@ -342,9 +342,11 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
         if (content.style.display === "block") {
           content.style.display = "none";
           cartIcon.src = "assets/cart.svg";
+          checkoutBtn.style.display = "none";
         } else {
           content.style.display = "block";
           cartIcon.src = "assets/collapse.svg";
+          checkoutBtn.style.display = "block";
         }
       }
       return;
