@@ -138,24 +138,11 @@ billionaires.forEach((b, i) => {
   b.element = li;
 });
 
+var cashRegisterSound = new Audio("assets/cash-register.mp3");
+
 function playCashRegister() {
-  var ctx = new (window.AudioContext || window.webkitAudioContext)();
-  var t = ctx.currentTime;
-  function ping(freq, start, dur) {
-    var osc = ctx.createOscillator();
-    var gain = ctx.createGain();
-    osc.type = "sine";
-    osc.frequency.value = freq;
-    gain.gain.setValueAtTime(0.3, start);
-    gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start(start);
-    osc.stop(start + dur);
-  }
-  ping(1800, t, 0.08);
-  ping(2200, t + 0.06, 0.08);
-  ping(2600, t + 0.12, 0.15);
+  cashRegisterSound.currentTime = 0;
+  cashRegisterSound.play();
 }
 
 function selectBillionaire(li) {
