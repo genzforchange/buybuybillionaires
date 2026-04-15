@@ -383,15 +383,12 @@ checkoutBtn.addEventListener("click", () => {
   const stampsContainer = document.querySelector("#receipt-stamps");
   stampsContainer.innerHTML = "";
   const stampSrc = "assets/" + currentBillionaire.id + "-stamp.png";
-  const stampCount = 3;
-  for (let i = 0; i < stampCount; i++) {
-    const angle = (Math.random() * 30 - 15).toFixed(1);
-    const img = document.createElement("img");
-    img.src = stampSrc;
-    img.alt = currentBillionaire.name + " stamp";
-    img.style.transform = "rotate(" + angle + "deg)";
-    stampsContainer.appendChild(img);
-  }
+  const angle = (Math.random() * 30 - 15).toFixed(1);
+  const img = document.createElement("img");
+  img.src = stampSrc;
+  img.alt = currentBillionaire.name + " stamp";
+  img.style.transform = "rotate(" + angle + "deg)";
+  stampsContainer.appendChild(img);
 
   receiptItems.innerHTML = "";
   const oldItemCount = document.querySelector(".receipt-item-count");
