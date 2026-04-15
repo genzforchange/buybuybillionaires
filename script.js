@@ -166,13 +166,13 @@ var products = [
 
 // TO DO: IMPORT AND CORRECT IMAGES FOR BILL GATES, MARK ZUCKERBERG, LARRY PAGE, AND ALL 935 US BILLIONAIRES (if we don't want to use Mr. Krabs)
 var billionaires = [
-  {id: "jeff-bezos", name: "Jeff Bezos", money: 7272000000, image: "assets/jeff-bezos.png", wealth: 242400000000},
-  {id: "elon-musk", name: "Elon Musk", money: 21789000000, image: "assets/elon-musk.png", wealth: 726300000000},
-  {id: "bill-gates", name: "Bill Gates", money: 3102000000, image: "assets/bill-gates.png", wealth: 103400000000},
-  {id: "mark-zuckerberg", name: "Mark Zuckerberg", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000},
-  {id: "larry-ellison", name: "Larry Ellison", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000},
-  {id: "larry-page", name: "Larry Page", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000},
-  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", money: 244814151570, image: "assets/mr-krabs.png", wealth: 8160471719000}
+  {id: "jeff-bezos", name: "Jeff Bezos", title: "Founder of Amazon", money: 7272000000, image: "assets/jeff-bezos.png", wealth: 242400000000},
+  {id: "elon-musk", name: "Elon Musk", title: "CEO of Tesla & SpaceX", money: 21789000000, image: "assets/elon-musk.png", wealth: 726300000000},
+  {id: "bill-gates", name: "Bill Gates", title: "Co-founder of Microsoft", money: 3102000000, image: "assets/bill-gates.png", wealth: 103400000000},
+  {id: "mark-zuckerberg", name: "Mark Zuckerberg", title: "CEO of Meta", money: 6789000000, image: "assets/mark-zuckerberg.png", wealth: 226300000000},
+  {id: "larry-ellison", name: "Larry Ellison", title: "Co-founder of Oracle", money: 7350000000, image: "assets/larry-ellison.png", wealth: 245000000000},
+  {id: "larry-page", name: "Larry Page", title: "Co-founder of Google", money: 7707000000, image: "assets/larry-page.png", wealth: 256900000000},
+  {id: "all-935-us-billionaires", name: "All 935 US Billionaires", title: "Combined Wealth", money: 244814151570, image: "assets/mr-krabs.png", wealth: 8160471719000}
 ];
 
 const billionaireList = document.querySelector("#billionaire-selector");
@@ -203,7 +203,7 @@ function selectBillionaire(li) {
   selectedHeadContainer.innerHTML = "";
   selectedHeadContainer.appendChild(b.element);
 
-  billionaireName.innerHTML = b.name;
+  billionaireName.innerHTML = b.name + ", <span class='billionaire-title'>" + b.title + "</span>";
   billionaireMoney.innerHTML = formatMoney(b.money);
 
   document.querySelector(".counter").classList.add("visible");
