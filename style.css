@@ -325,11 +325,16 @@ hr{
   margin: 0.25em 0 0;
 }
 
-.receipt-account,
-.receipt-balance {
+.receipt-info {
+  border-bottom: 2px dashed #999;
+  padding-bottom: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.receipt-info p {
   font-family: "receipt-narrow", sans-serif;
-  font-size: 14px;
-  margin: 0.25em 0;
+  font-size: 13px;
+  margin: 0.2em 0;
 }
 
 .receipt-item {

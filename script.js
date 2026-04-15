@@ -375,8 +375,10 @@ checkoutBtn.addEventListener("click", () => {
   const activeCards = document.querySelectorAll(".product-card.active");
   if (activeCards.length === 0 || !currentBillionaire) return;
 
+  const now = new Date();
+  document.querySelector("#receipt-date").textContent = now.toLocaleString();
   receiptName.textContent = currentBillionaire.name;
-  receiptOriginalBalance.textContent = formatShortMoney(currentBillionaire.wealth);
+  receiptOriginalBalance.textContent = "$" + currentBillionaire.wealth.toLocaleString();
 
   receiptItems.innerHTML = "";
   let total = 0;
@@ -386,12 +388,12 @@ checkoutBtn.addEventListener("click", () => {
     total += price;
     const div = document.createElement("div");
     div.classList.add("receipt-item");
-    div.innerHTML = `<span>${name}</span><span>${formatShortMoney(price)}</span>`;
+    div.innerHTML = `<span>${name}</span><span>$${price.toLocaleString()}</span>`;
     receiptItems.appendChild(div);
   });
 
-  receiptTotal.innerHTML = `<span>Total</span><span>${formatShortMoney(total)}</span>`;
-  receiptRemaining.innerHTML = `<span>Remaining</span><span>${formatShortMoney(currentBillionaire.money)}</span>`;
+  receiptTotal.innerHTML = `<span>Total</span><span>$${total.toLocaleString()}</span>`;
+  receiptRemaining.innerHTML = `<span>Remaining</span><span>$${currentBillionaire.money.toLocaleString()}</span>`;
   receiptOverlay.classList.add("visible");
 });
 
