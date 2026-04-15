@@ -283,12 +283,27 @@ function updateCart() {
   cartContent.appendChild(totalDiv);
 }
 
+function showSpentMessage() {
+  billionaireMoney.dataset.originalText = billionaireMoney.innerHTML;
+  billionaireMoney.innerHTML = "Congrats, you spent it all!";
+  billionaireMoney.classList.add("spent-shake");
+  setTimeout(() => {
+    billionaireMoney.innerHTML = formatMoney(currentBillionaire.money);
+    billionaireMoney.classList.remove("spent-shake");
+  }, 2000);
+}
+
 function toggleCard(card) {
   if(!currentBillionaire) {
     const defaultBillionaire = document.querySelector("#mark-zuckerberg");
     if(defaultBillionaire) selectBillionaire(defaultBillionaire);
   }
   const price = parseFloat(card.dataset.price);
+  const isAdding = !card.classList.contains("active");
+  if (isAdding && currentBillionaire.money < price) {
+    showSpentMessage();
+    return;
+  }
   card.classList.toggle("active");
   if(card.classList.contains("active")){
     currentBillionaire.money -= price;
