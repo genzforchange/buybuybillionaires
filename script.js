@@ -365,9 +365,16 @@ const receiptOverlay = document.querySelector("#receipt-overlay");
 const receiptItems = document.querySelector("#receipt-items");
 const receiptTotal = document.querySelector("#receipt-total");
 
+const receiptName = document.querySelector("#receipt-name");
+const receiptOriginalBalance = document.querySelector("#receipt-original-balance");
+const receiptRemaining = document.querySelector("#receipt-remaining");
+
 checkoutBtn.addEventListener("click", () => {
   const activeCards = document.querySelectorAll(".product-card.active");
-  if (activeCards.length === 0) return;
+  if (activeCards.length === 0 || !currentBillionaire) return;
+
+  receiptName.textContent = currentBillionaire.name;
+  receiptOriginalBalance.textContent = formatShortMoney(currentBillionaire.wealth);
 
   receiptItems.innerHTML = "";
   let total = 0;
@@ -382,6 +389,7 @@ checkoutBtn.addEventListener("click", () => {
   });
 
   receiptTotal.innerHTML = `<span>Total</span><span>${formatShortMoney(total)}</span>`;
+  receiptRemaining.innerHTML = `<span>Remaining</span><span>${formatShortMoney(currentBillionaire.money)}</span>`;
   receiptOverlay.classList.add("visible");
 });
 

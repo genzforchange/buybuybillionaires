@@ -293,42 +293,51 @@ hr{
 }
 
 .receipt {
-  background: #FBFBFB;
+  background: url('assets/paper-texture.jpg') center/cover;
   color: #151515;
   width: 350px;
   max-height: 80vh;
   overflow-y: auto;
   border-radius: 4px;
   padding: 2em 1.5em;
-  font-family: "archivo", sans-serif;
+  font-family: "receipt-narrow", sans-serif;
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
 .receipt-header {
   text-align: center;
-  border-bottom: 2px dashed #ccc;
+  border-bottom: 2px dashed #999;
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
 
 .receipt-header h2 {
-  font-family: "louvette-pixel", sans-serif;
+  font-family: "receipt-narrow", sans-serif;
   font-size: 28px;
   margin: 0;
 }
 
 .receipt-subtitle {
+  font-family: "receipt-narrow", sans-serif;
   font-size: 12px;
-  color: #888;
+  color: #555;
   margin: 0.25em 0 0;
+}
+
+.receipt-account,
+.receipt-balance {
+  font-family: "receipt-narrow", sans-serif;
+  font-size: 14px;
+  margin: 0.25em 0;
 }
 
 .receipt-item {
   display: flex;
   justify-content: space-between;
   padding: 0.4em 0;
+  font-family: "receipt-narrow", sans-serif;
   font-size: 14px;
-  border-bottom: 1px dotted #ddd;
+  border-bottom: 1px dotted #999;
 }
 
 .receipt-total {
@@ -337,16 +346,29 @@ hr{
   padding: 0.75em 0 0.25em;
   margin-top: 0.5em;
   border-top: 2px dashed #151515;
+  font-family: "receipt-narrow", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
 
+.receipt-remaining {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25em 0;
+  font-family: "receipt-narrow", sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
 .receipt-thanks {
   text-align: center;
+  font-family: "receipt-narrow", sans-serif;
   font-size: 12px;
-  color: #888;
+  color: #555;
   margin-top: 1.5em;
   margin-bottom: 0;
+  border-top: 2px dashed #999;
+  padding-top: 1em;
 }
 
 .cart-list {
