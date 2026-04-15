@@ -303,6 +303,7 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
           cartIcon.src = "assets/cart.svg";
           checkoutBtn.style.display = "none";
         } else {
+          updateCart();
           content.style.display = "block";
           cartIcon.src = "assets/collapse.svg";
           var hasItems = document.querySelectorAll(".product-card.active").length > 0;
