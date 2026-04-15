@@ -296,6 +296,7 @@ hr{
 }
 
 .receipt {
+  position: relative;
   background: url('assets/receipt-paper.png') center/cover;
   color: #151515;
   width: 350px;
@@ -328,38 +329,34 @@ hr{
 }
 
 .receipt-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   border-bottom: 2px dashed #999;
   padding-bottom: 0.75em;
   margin-bottom: 0.75em;
 }
 
-.receipt-info-text {
-  flex: 1;
-}
-
-.receipt-info-text p {
+.receipt-info p {
   font-family: "receipt-narrow", sans-serif;
   font-size: 13px;
   margin: 0.2em 0;
 }
 
 .receipt-stamps {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-  margin-left: 0.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
   overflow: hidden;
 }
 
 .receipt-stamps img {
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   mix-blend-mode: multiply;
+  opacity: 0.85;
 }
 
 .receipt-item {
