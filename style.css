@@ -283,6 +283,101 @@ hr{
   opacity: 0.6;
 }
 
+.sources-link {
+  cursor: pointer;
+}
+
+.sources-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.sources-overlay.visible {
+  display: flex;
+}
+
+.sources-popup {
+  position: relative;
+  background: #FBFBFB;
+  color: #151515;
+  width: 500px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.sources-close,
+.actions-close {
+  position: absolute;
+  top: 0.75em;
+  right: 0.75em;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+.sources-close:hover,
+.actions-close:hover {
+  color: #151515;
+}
+
+.sources-title {
+  font-family: "dark-london", sans-serif;
+  font-size: 28px;
+  margin: 0 0 0.25em;
+}
+
+.sources-description {
+  font-family: "archivo", sans-serif;
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 1.5em;
+}
+
+.sources-item {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0;
+}
+
+.sources-item:last-child {
+  border-bottom: none;
+}
+
+.sources-product-name {
+  font-family: "archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 0.25em;
+}
+
+.sources-link-text {
+  font-family: "archivo", sans-serif;
+  font-size: 12px;
+  margin: 0.15em 0;
+  word-break: break-all;
+}
+
+.sources-link-text a {
+  color: #F3403B;
+  text-decoration: none;
+}
+
+.sources-link-text a:hover {
+  text-decoration: underline;
+}
+
 .receipt-overlay {
   display: none;
   position: fixed;
