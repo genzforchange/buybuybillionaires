@@ -615,10 +615,10 @@ li{
   font-weight: 400
 }
 
-.billionaire-title {
+#billionaire-name .billionaire-title {
   display: block;
   font-family: "archivo", sans-serif;
-  font-size: 12px;
+  font-size: 12px !important;
   font-weight: 400;
   letter-spacing: 0;
   opacity: 0.7;
