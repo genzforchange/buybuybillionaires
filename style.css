@@ -256,6 +256,99 @@ hr{
   color: #ff6b6b;
 }
 
+.checkout-btn {
+  width: 100%;
+  padding: 0.75em;
+  background-color: #F3403B;
+  color: #FBFBFB;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  font-family: "archivo", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.checkout-btn:hover {
+  background-color: #d63631;
+}
+
+.receipt-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.receipt-overlay.visible {
+  display: flex;
+}
+
+.receipt {
+  background: #FBFBFB;
+  color: #151515;
+  width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 4px;
+  padding: 2em 1.5em;
+  font-family: "archivo", sans-serif;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.receipt-header {
+  text-align: center;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.receipt-header h2 {
+  font-family: "louvette-pixel", sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+.receipt-subtitle {
+  font-size: 12px;
+  color: #888;
+  margin: 0.25em 0 0;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4em 0;
+  font-size: 14px;
+  border-bottom: 1px dotted #ddd;
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75em 0 0.25em;
+  margin-top: 0.5em;
+  border-top: 2px dashed #151515;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.receipt-thanks {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
 .cart-list {
   list-style: none;
   padding: 0;

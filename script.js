@@ -360,6 +360,35 @@ document.querySelectorAll(".collapsible").forEach(function(btn) {
   });
 });
 
-// TO DO: ADD CART FUNCTIONALITY THAT SHOWS THE ITEMS IN THE CART AND THEIR COSTS
+const checkoutBtn = document.querySelector("#checkout-btn");
+const receiptOverlay = document.querySelector("#receipt-overlay");
+const receiptItems = document.querySelector("#receipt-items");
+const receiptTotal = document.querySelector("#receipt-total");
+
+checkoutBtn.addEventListener("click", () => {
+  const activeCards = document.querySelectorAll(".product-card.active");
+  if (activeCards.length === 0) return;
+
+  receiptItems.innerHTML = "";
+  let total = 0;
+  activeCards.forEach(card => {
+    const name = card.querySelector("h4").textContent;
+    const price = parseFloat(card.dataset.price);
+    total += price;
+    const div = document.createElement("div");
+    div.classList.add("receipt-item");
+    div.innerHTML = `<span>${name}</span><span>${formatShortMoney(price)}</span>`;
+    receiptItems.appendChild(div);
+  });
+
+  receiptTotal.innerHTML = `<span>Total</span><span>${formatShortMoney(total)}</span>`;
+  receiptOverlay.classList.add("visible");
+});
+
+receiptOverlay.addEventListener("click", (e) => {
+  if (e.target === receiptOverlay) {
+    receiptOverlay.classList.remove("visible");
+  }
+});
 
 // TO DO: ADD RESET FUNCTIONALITY IN JS THAT RESETS THE CART ITEMS WHEN A NEW BILLIONAIRE IS CHOSEN (currently this results in an error that doesn't calculate the money properly when a new billionaire is chosen)
