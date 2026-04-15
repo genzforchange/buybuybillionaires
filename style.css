@@ -65,6 +65,13 @@ html, body {
   text-align: center;
   border: 2px solid var(--black);
   font-size: 14px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.context:hover {
+  background-color: var(--black);
+  color: #FBFBFB;
+  font-weight: 700;
 }
 
 #please-change-font{
