@@ -260,10 +260,11 @@ hr{
   display: none;
   width: 100%;
   padding: 0.75em;
-  background-color: #F3403B;
+  margin-top: 20px;
+  background-color: var(--black);
   color: #FBFBFB;
-  border: none;
-  border-radius: 0 0 10px 10px;
+  border: white 1px solid;
+  /* border-radius: 0 0 10px 10px; */
   font-family: "receipt-narrow", sans-serif;
   font-size: 18px;
   font-weight: 700;
