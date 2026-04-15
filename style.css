@@ -796,18 +796,18 @@ li{
   text-align: right;
 }
 
-@keyframes cart-blink-yellow {
+@keyframes cart-fade-yellow {
   0% { filter: none; }
-  20% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
-  40% { filter: none; }
-  60% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
-  80% { filter: none; }
-  90% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
+  16% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
+  33% { filter: none; }
+  50% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
+  66% { filter: none; }
+  83% { filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(500%) hue-rotate(0deg); }
   100% { filter: none; }
 }
 
 .cart-blink {
-  animation: cart-blink-yellow 1.5s ease;
+  animation: cart-fade-yellow 3s ease-in-out;
 }
 
 #cart-container{
